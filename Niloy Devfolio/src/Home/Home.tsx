@@ -114,7 +114,7 @@ const Home: FC = () => {
 
                             {/* Social Links */}
                             <div className="animate-fade-in-up animation-delay-800">
-                                <div className="flex space-x-6 pt-8">
+                                <div className="flex space-x-6 pt-8 pb-4">
                                     {[
                                         { name: 'GitHub', icon: '👨‍💻', url: '#' },
                                         { name: 'LinkedIn', icon: '💼', url: '#' },
