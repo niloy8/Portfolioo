@@ -1,16 +1,16 @@
 import type { FC } from 'react';
 import { useState, useEffect } from 'react';
 
+
+const roles = [
+    'Full Stack Developer',
+    'Frontend Developer',
+    'React Developer',
+];
 const Home: FC = () => {
     const [displayText, setDisplayText] = useState('');
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
-
-    const roles = [
-        'Full Stack Developer',
-        'Frontend Developer',
-        'React Developer',
-    ];
 
     // Typewriter effect
     useEffect(() => {
@@ -33,7 +33,7 @@ const Home: FC = () => {
         }, isDeleting ? 50 : 150);
 
         return () => clearTimeout(timer);
-    }, [displayText, currentIndex, isDeleting, roles]);
+    }, [isDeleting, displayText, currentIndex]);
 
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);
