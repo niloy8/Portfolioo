@@ -63,14 +63,14 @@ const Home: FC = () => {
                     <div className="text-left">
                         <div className="space-y-6">
                             {/* Greeting */}
-                            <div className="animate-fade-in-up">
-                                <p className="text-blue-400 text-lg md:text-xl font-medium mb-2">
+                            <div className="animate-fade-in-up ">
+                                <p className="text-blue-400 text-lg md:text-xl font-medium lg:text-3xl mt-3.5 mb-2">
                                     Hello, I'm
                                 </p>
-                                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-                                    Niloy
-                                    <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-                                        Ahmed
+                                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white  leading-tight ">
+                                    Niloy{' '}
+                                    <span className=" text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+                                        Bhuiyan
                                     </span>
                                 </h1>
                             </div>
