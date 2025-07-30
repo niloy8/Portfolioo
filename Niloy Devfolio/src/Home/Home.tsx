@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { useState, useEffect } from 'react';
-
+import image1 from '../assets/img2.png'
 
 const roles = [
     'Full Stack Developer',
@@ -140,9 +140,9 @@ const Home: FC = () => {
                         <div className="animate-fade-in-up animation-delay-300">
                             <div className="relative">
                                 {/* Profile image placeholder */}
-                                <div className="w-80 h-80 md:w-96 md:h-96 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-gray-700/50">
-                                    <div className="w-64 h-64 md:w-80 md:h-80 bg-gray-800 rounded-full flex items-center justify-center">
-                                        <span className="text-6xl md:text-7xl">👨‍💻</span>
+                                <div className="w-80  h-80 md:w-96 md:h-96 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-gray-700/50 ">
+                                    <div className="w-64 h-64 md:w-80 md:h-80 bg-gray-800 rounded-full flex items-center justify-center relative">
+                                        <span className="text-6xl md:text-7xl"><img src={image1} className='w-2xl h-2xl rounded-b-full absolute bottom-0 left-0 ' alt="" /></span>
                                     </div>
                                 </div>
 
