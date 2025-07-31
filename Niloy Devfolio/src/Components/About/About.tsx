@@ -27,7 +27,7 @@ const About: FC = () => {
                     {/* Right side - Content */}
                     <div className="space-y-6">
                         <h3 className="text-2xl md:text-3xl font-bold text-white">
-                            I'm Niloy Ahmed, a Passionate Developer
+                            I'm Niloy Bhuiyan, a Passionate Developer
                         </h3>
 
                         <p className="text-gray-300 text-lg leading-relaxed">

@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { useState, useEffect } from 'react';
 import image1 from '../assets/img2.png'
+import { Link } from 'react-router';
 
 const roles = [
     'Full Stack Developer',
@@ -97,18 +98,18 @@ const Home: FC = () => {
                             {/* CTA Buttons */}
                             <div className="animate-fade-in-up animation-delay-600">
                                 <div className="flex flex-col sm:flex-row gap-4 pt-6">
-                                    <button
-                                        onClick={() => scrollToSection('projects')}
+                                    <Link to="/projects"
+
                                         className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
                                     >
                                         View My Work
-                                    </button>
-                                    <button
+                                    </Link>
+                                    <Link to="/contact"
                                         onClick={() => scrollToSection('contact')}
                                         className="px-8 py-4 border-2 border-gray-600 hover:border-blue-400 text-gray-300 hover:text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
                                     >
                                         Get In Touch
-                                    </button>
+                                    </Link>
                                 </div>
                             </div>
 

@@ -56,7 +56,7 @@ const Navbar: FC = () => {
                             to="/"
                             className="text-2xl md:text-3xl font-bold text-white hover:text-blue-400 transition-colors duration-300 flex items-center"
                         >
-                            <img className='w-12 h-12' src="./src/assets/image-removebg-preview (3).png" alt="logo" />
+                            <img className='w-14 h-14' src="./src/assets/image-removebg-preview (3).png" alt="logo" />
                             Niloy Bhuiyan
                         </Link>
                     </div>
