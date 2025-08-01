@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-
+import img3 from '../../assets/img3.jpeg';
 const About: FC = () => {
     return (
         <section id="about" className="py-20 bg-gray-800">
@@ -15,9 +15,9 @@ const About: FC = () => {
                     {/* Left side - Image */}
                     <div className="flex justify-center">
                         <div className="relative">
-                            <div className="w-80 h-80 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-gray-700/50">
+                            <div className="w-80 h-[410px] bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-gray-700/50">
                                 <div className="w-72 h-72 bg-gray-700 rounded-2xl flex items-center justify-center">
-                                    <span className="text-8xl">🧑‍💻</span>
+                                    <span className="text-8xl"><img className='rounded-2xl' src={img3} alt="person" /></span>
                                 </div>
                             </div>
                             <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-500/20 rounded-full"></div>

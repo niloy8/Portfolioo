@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Add to your global CSS file */
+/* Add to global CSS file */
 @keyframes fade-in-up {
     from {
         opacity: 0;
@@ -46,7 +46,7 @@
     animation-delay: 1s;
 }
 
-/* Add to your global CSS file (src/index.css or similar) */
+/* Add to  global CSS file*/
 @keyframes fade-in-up {
     from {
         opacity: 0;

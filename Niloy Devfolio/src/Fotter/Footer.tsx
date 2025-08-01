@@ -6,6 +6,7 @@ import { Link } from 'react-router';
 
 const Footer: FC = () => {
     const currentYear = new Date().getFullYear();
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [link, setLink] = useState<string>('')
 
     return (
