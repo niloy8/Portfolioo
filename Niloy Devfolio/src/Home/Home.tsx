@@ -95,7 +95,7 @@ const Home: FC = () => {
                                 </p>
                             </div>
 
-                            {/* CTA Buttons */}
+                            {/* Link Button */}
                             <div className="animate-fade-in-up animation-delay-600">
                                 <div className="flex flex-col sm:flex-row gap-4 pt-6">
                                     <Link to="/projects"
@@ -113,26 +113,7 @@ const Home: FC = () => {
                                 </div>
                             </div>
 
-                            {/* Social Links */}
-                            <div className="animate-fade-in-up animation-delay-800">
-                                <div className="flex space-x-6 pt-8 pb-4">
-                                    {[
-                                        { name: 'GitHub', icon: '👨‍💻', url: '#' },
-                                        { name: 'LinkedIn', icon: '💼', url: '#' },
-                                        { name: 'Twitter', icon: '🐦', url: '#' },
-                                        { name: 'Email', icon: '📧', url: '#' }
-                                    ].map((social) => (
-                                        <a
-                                            key={social.name}
-                                            href={social.url}
-                                            className="w-12 h-12 bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
-                                            title={social.name}
-                                        >
-                                            <span className="text-xl">{social.icon}</span>
-                                        </a>
-                                    ))}
-                                </div>
-                            </div>
+
                         </div>
                     </div>
 

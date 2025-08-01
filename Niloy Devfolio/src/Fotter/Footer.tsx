@@ -1,7 +1,12 @@
-import type { FC } from 'react';
+import { useState, type FC } from 'react';
+import { CiLinkedin } from 'react-icons/ci';
+import { FaFacebookF, FaGithub } from 'react-icons/fa';
+import { MdOutlineEmail } from 'react-icons/md';
+import { Link } from 'react-router';
 
 const Footer: FC = () => {
     const currentYear = new Date().getFullYear();
+    const [link, setLink] = useState<string>('')
 
     return (
         <footer className="bg-gray-900 border-t border-gray-800">
@@ -16,15 +21,16 @@ const Footer: FC = () => {
                         </p>
                         <div className="flex space-x-4">
                             {[
-                                { name: 'GitHub', icon: '👨‍💻', url: '#' },
-                                { name: 'LinkedIn', icon: '💼', url: '#' },
-                                { name: 'Twitter', icon: '🐦', url: '#' },
-                                { name: 'Email', icon: '📧', url: '#' }
+                                { name: 'LinkedIn', icon: <CiLinkedin />, url: 'https://www.linkedin.com/in/niloy-bhuiyan/' },
+                                { name: 'Github', icon: <FaGithub />, url: 'https://github.com/niloy8' },
+                                { name: 'Facebook', icon: <FaFacebookF />, url: 'https://www.facebook.com/mdniloy124/' },
+                                { name: 'Email', icon: <MdOutlineEmail />, url: 'https://mail.google.com/mail/?view=cm&fs=1&to=niloybhuiyan522@gmail.com' }
                             ].map((social) => (
                                 <a
                                     key={social.name}
                                     href={social.url}
-                                    className="w-10 h-10 bg-gray-800 hover:bg-blue-600 text-gray-400 hover:text-white rounded-lg flex items-center justify-center transition-all duration-300"
+                                    target='_blank'
+                                    className="w-10 h-10 bg-gray-800 hover:bg-blue-600 text-gray-400 hover:text-white rounded-lg flex items-center justify-center transition-all duration-300 "
                                     title={social.name}
                                 >
                                     <span className="text-lg">{social.icon}</span>
@@ -39,12 +45,13 @@ const Footer: FC = () => {
                         <ul className="space-y-2">
                             {['Home', 'About', 'Projects', 'Skills', 'Contact'].map((link) => (
                                 <li key={link}>
-                                    <a
-                                        href={`#${link.toLowerCase()}`}
+                                    <Link
+                                        onClick={() => setLink(link)}
+                                        to={link === 'Home' ? '/' : `/${link.toLowerCase()}`}
                                         className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
                                     >
                                         {link}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
