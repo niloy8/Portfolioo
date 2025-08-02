@@ -1,5 +1,11 @@
 import type { FC } from 'react';
 import { useState } from 'react';
+import { FaPhoneAlt } from 'react-icons/fa';
+import { FaLocationDot } from 'react-icons/fa6';
+import { MdOutlineEmail } from 'react-icons/md';
+import { CiLinkedin } from 'react-icons/ci';
+import { FaFacebookF, FaGithub } from 'react-icons/fa';
+
 
 const Contact: FC = () => {
     const [formData, setFormData] = useState({
@@ -49,27 +55,27 @@ const Contact: FC = () => {
                         <div className="space-y-6">
                             <div className="flex items-center space-x-4">
                                 <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
-                                    <span className="text-blue-400 text-xl">📧</span>
+                                    <span className="text-blue-400 text-xl"><MdOutlineEmail /></span>
                                 </div>
                                 <div>
                                     <h4 className="text-white font-semibold">Email</h4>
-                                    <p className="text-gray-400">niloyahmed@example.com</p>
+                                    <p className="text-gray-400">niloybhuiyan522@gmail.com</p>
                                 </div>
                             </div>
 
                             <div className="flex items-center space-x-4">
                                 <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
-                                    <span className="text-blue-400 text-xl">📱</span>
+                                    <span className="text-blue-400 text-xl"><FaPhoneAlt /></span>
                                 </div>
                                 <div>
                                     <h4 className="text-white font-semibold">Phone</h4>
-                                    <p className="text-gray-400">+880 123 456 7890</p>
+                                    <p className="text-gray-400">+880 1743354707</p>
                                 </div>
                             </div>
 
                             <div className="flex items-center space-x-4">
                                 <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
-                                    <span className="text-blue-400 text-xl">📍</span>
+                                    <span className="text-blue-400 text-xl"><FaLocationDot /></span>
                                 </div>
                                 <div>
                                     <h4 className="text-white font-semibold">Location</h4>
@@ -83,18 +89,19 @@ const Contact: FC = () => {
                             <h4 className="text-white font-semibold mb-4">Follow Me</h4>
                             <div className="flex space-x-4">
                                 {[
-                                    { name: 'GitHub', icon: '👨‍💻', url: '#' },
-                                    { name: 'LinkedIn', icon: '💼', url: '#' },
-                                    { name: 'Twitter', icon: '🐦', url: '#' },
-                                    { name: 'Instagram', icon: '📷', url: '#' }
+                                    { name: 'LinkedIn', icon: <CiLinkedin />, url: 'https://www.linkedin.com/in/niloy-bhuiyan/' },
+                                    { name: 'Github', icon: <FaGithub />, url: 'https://github.com/niloy8' },
+                                    { name: 'Facebook', icon: <FaFacebookF />, url: 'https://www.facebook.com/mdniloy124/' },
+                                    { name: 'Email', icon: <MdOutlineEmail />, url: 'https://mail.google.com/mail/?view=cm&fs=1&to=niloybhuiyan522@gmail.com' }
                                 ].map((social) => (
                                     <a
                                         key={social.name}
                                         href={social.url}
-                                        className="w-12 h-12 bg-gray-800 hover:bg-blue-600 text-gray-400 hover:text-white rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+                                        target='_blank'
+                                        className="w-10 h-10 bg-gray-800 hover:bg-blue-600 text-gray-400 hover:text-white rounded-lg flex items-center justify-center transition-all duration-300 "
                                         title={social.name}
                                     >
-                                        <span className="text-xl">{social.icon}</span>
+                                        <span className="text-lg">{social.icon}</span>
                                     </a>
                                 ))}
                             </div>

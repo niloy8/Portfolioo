@@ -17,8 +17,7 @@ const Footer: FC = () => {
                     <div className="md:col-span-2">
                         <h3 className="text-2xl font-bold text-white mb-4">Niloy Devfolio</h3>
                         <p className="text-gray-400 mb-6 max-w-md">
-                            Passionate full-stack developer creating modern web applications
-                            with cutting-edge technologies and user-centric design.
+                            Beginner full-stack developer learning to build modern web applications with a focus on clean design and easy-to-use features.
                         </p>
                         <div className="flex space-x-4">
                             {[

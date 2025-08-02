@@ -27,24 +27,21 @@ const About: FC = () => {
                     {/* Right side - Content */}
                     <div className="space-y-6">
                         <h3 className="text-2xl md:text-3xl font-bold text-white">
-                            I'm Niloy Bhuiyan, a Passionate Developer
+                            I'm Niloy Bhuiyan, I am building my real world projects now.
                         </h3>
 
                         <p className="text-gray-300 text-lg leading-relaxed">
-                            I'm a dedicated full-stack developer with over 3 years of experience in creating
-                            modern web applications. I specialize in React, Node.js, and modern JavaScript
-                            frameworks to build scalable and user-friendly solutions.
+                            I’m a beginner full-stack developer passionate about building modern web applications. I’ve been learning and practicing React, Node.js, and JavaScript,frameworks to create simple, functional, and user-friendly projects.
                         </p>
 
                         <p className="text-gray-300 text-lg leading-relaxed">
-                            When I'm not coding, you can find me exploring new technologies, contributing to
-                            open-source projects, or sharing my knowledge through blog posts and tutorials.
+                            So far, I’ve completed several projects, which have helped me strengthen my understanding of web development fundamentals. I’m continuously exploring new technologies, experimenting with ideas, and working to improve my skills. My goal is to grow into a confident developer who can create scalable and impactful solutions.
                         </p>
 
                         <div className="grid grid-cols-2 gap-6 pt-6">
                             <div>
                                 <h4 className="text-blue-400 font-semibold mb-2">Age</h4>
-                                <p className="text-gray-300">25</p>
+                                <p className="text-gray-300">23</p>
                             </div>
                             <div>
                                 <h4 className="text-blue-400 font-semibold mb-2">Location</h4>
@@ -52,17 +49,16 @@ const About: FC = () => {
                             </div>
                             <div>
                                 <h4 className="text-blue-400 font-semibold mb-2">Experience</h4>
-                                <p className="text-gray-300">3+ Years</p>
+                                <p className="text-gray-300">Self-initiated | 2025 – Present</p>
                             </div>
                             <div>
                                 <h4 className="text-blue-400 font-semibold mb-2">Projects</h4>
-                                <p className="text-gray-300">50+ Completed</p>
+                                <p className="text-gray-300"></p>
                             </div>
                         </div>
 
                         <div className="pt-6">
-                            <a
-                                href="#contact"
+                            <a href="/Niloy_Bhuiyan_CV.pdf" download="Niloy_Bhuiyan_CV.pdf"
                                 className="inline-block px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
                             >
                                 Download CV
