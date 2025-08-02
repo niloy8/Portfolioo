@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { useEffect } from 'react';
 import { BiLogoTypescript } from 'react-icons/bi';
-import { FaGithub, FaJsSquare, FaNode, FaReact } from "react-icons/fa";
+import { FaFigma, FaGithub, FaJsSquare, FaNode, FaReact } from "react-icons/fa";
 import { RiTailwindCssFill } from 'react-icons/ri';
 import { SiExpress, SiFirebase, SiMongodb } from 'react-icons/si';
 import { TiHtml5 } from 'react-icons/ti';
@@ -16,31 +16,29 @@ const Skills: FC = () => {
         {
             title: "Frontend",
             skills: [
-                { name: "React", level: 90, icon: <FaReact className='text-zinc-100' /> },
+                { name: "React", icon: <FaReact className='text-zinc-100' /> },
                 { name: "TypeScript", level: 'Beginner', icon: <BiLogoTypescript className='text-zinc-100' /> },
-                { name: "JavaScript", level: 95, icon: <FaJsSquare className='text-zinc-100' /> },
-                { name: "HTML/CSS", level: 90, icon: <TiHtml5 className='text-zinc-100' /> },
-                { name: "Tailwind CSS", level: 85, icon: <RiTailwindCssFill className='text-zinc-100' /> },
+                { name: "JavaScript", icon: <FaJsSquare className='text-zinc-100' /> },
+                { name: "HTML/CSS", icon: <TiHtml5 className='text-zinc-100' /> },
+                { name: "Tailwind CSS", icon: <RiTailwindCssFill className='text-zinc-100' /> },
             ]
         },
         {
             title: "Backend",
             skills: [
-                { name: "Node.js", level: 85, icon: <FaNode className='text-zinc-100' /> },
-                { name: "Express.js", level: 80, icon: <SiExpress className='text-zinc-100' /> },
-                { name: "MongoDB", level: 80, icon: <SiMongodb className='text-zinc-100' /> },
-                { name: "Firebase", level: 70, icon: <SiFirebase className='text-zinc-100' /> }
+                { name: "Node.js", icon: <FaNode className='text-zinc-100' /> },
+                { name: "Express.js", icon: <SiExpress className='text-zinc-100' /> },
+                { name: "MongoDB", icon: <SiMongodb className='text-zinc-100' /> },
+                { name: "Firebase", icon: <SiFirebase className='text-zinc-100' /> }
             ]
         },
         {
             title: "Tools & Others",
             skills: [
-                { name: "Git", level: 90, icon: <FaGithub className='text-zinc-100' /> },
-                { name: "Docker", level: 70, icon: "🐳" },
-                { name: "AWS", level: 65, icon: "☁️" },
-                { name: "Figma", level: 75, icon: "🎨" },
-                { name: "Jest", level: 70, icon: "🧪" },
-                { name: "Webpack", level: 65, icon: "📦" }
+                { name: "Git", icon: <FaGithub className='text-zinc-100' /> },
+
+                { name: "Figma", level: 'Basic', icon: <FaFigma className='text-zinc-100' /> },
+
             ]
         }
     ];
@@ -80,17 +78,12 @@ const Skills: FC = () => {
                                                 <span className="text-gray-300 font-medium">{skill.name}</span>
                                             </div>
                                             <span className="text-blue-400 font-semibold">
-                                                {typeof skill.level === 'number' ? `${skill.level}%` : skill.level}
+                                                {skill.level}
                                             </span>
                                         </div>
 
                                         <div className="w-full bg-gray-700 rounded-full h-2">
-                                            <div
-                                                className="bg-gradient-to-r from-blue-500 to-cyan-400 h-2 rounded-full transition-all duration-1000 ease-out"
-                                                style={{
-                                                    width: typeof skill.level === 'number' ? `${skill.level}%` : '30%'
-                                                }}
-                                            ></div>
+
                                         </div>
                                     </div>
                                 ))}
