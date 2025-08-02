@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { useEffect } from 'react';
 import firstProject from "../../assets/image.png"
+import secondProject from "../../assets/p-2.png"
 const Projects: FC = () => {
     useEffect(() => {
         // Scroll to top on page load
@@ -16,6 +17,15 @@ const Projects: FC = () => {
             tags: ["React", "Node.js", "MongoDB", "Firebase", "Tailwind CSS"],
             liveLink: "https://job-portal-ad35b.firebaseapp.com/",
             githubLink: "https://github.com/niloy8/Job-Portal-Project"
+        },
+        {
+            id: 2,
+            title: "Portfolio",
+            description: "A personal portfolio website built with React, Tailwind CSS and Typescript. Showcases my skills, projects, and experience. It is a multipage porfolio with the help of react router",
+            image: secondProject,
+            tags: ["React", "TypeScript", "Netlify", "Tailwind CSS"],
+            liveLink: "https://dancing-torrone-aac30d.netlify.app/",
+            githubLink: "https://github.com/niloy8/Portfolioo/tree/main"
         },
 
     ];
