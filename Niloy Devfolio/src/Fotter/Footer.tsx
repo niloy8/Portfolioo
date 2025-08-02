@@ -1,4 +1,4 @@
-import { useState, type FC } from 'react';
+import { type FC } from 'react';
 import { CiLinkedin } from 'react-icons/ci';
 import { FaFacebookF, FaGithub } from 'react-icons/fa';
 import { MdOutlineEmail } from 'react-icons/md';
@@ -6,8 +6,8 @@ import { Link } from 'react-router';
 
 const Footer: FC = () => {
     const currentYear = new Date().getFullYear();
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [link, setLink] = useState<string>('')
+
+
 
     return (
         <footer className="bg-gray-900 border-t border-gray-800">
@@ -46,7 +46,7 @@ const Footer: FC = () => {
                             {['Home', 'About', 'Projects', 'Skills', 'Contact'].map((link) => (
                                 <li key={link}>
                                     <Link
-                                        onClick={() => setLink(link)}
+
                                         to={link === 'Home' ? '/' : `/${link.toLowerCase()}`}
                                         className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
                                     >

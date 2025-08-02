@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router';
-
+import logo from '../assets/image4.png';
 const Navbar: FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
@@ -56,7 +56,7 @@ const Navbar: FC = () => {
                             to="/"
                             className="text-2xl md:text-3xl font-bold text-white hover:text-blue-400 transition-colors duration-300 flex items-center"
                         >
-                            <img className='w-14 h-14' src="./src/assets/image-removebg-preview (3).png" alt="logo" />
+                            <img className='w-14 h-14' src={logo} alt="logo" />
                             Niloy Bhuiyan
                         </Link>
                     </div>
