@@ -1,23 +1,30 @@
 import type { FC } from 'react';
+import { useEffect } from 'react';
 import img3 from '../../assets/img3.jpeg';
+import myCV from '../../../public/NiloyBhuiyan.pdf'
 const About: FC = () => {
+    useEffect(() => {
+        // Scroll to top on page load
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <section id="about" className="py-20 bg-gray-800">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 animate-fade-in-up">
                         About <span className="text-blue-400">Me</span>
                     </h2>
-                    <div className="w-24 h-1 bg-blue-400 mx-auto"></div>
+                    <div className="w-24 h-1 bg-blue-400 mx-auto animate-fade-in-up animation-delay-200"></div>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Left side - Image */}
-                    <div className="flex justify-center">
+                    <div className="flex justify-center animate-fade-in-up animation-delay-300">
                         <div className="relative">
-                            <div className="w-80 h-[410px] bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-gray-700/50">
+                            <div className="w-80 h-86 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-gray-700/50">
                                 <div className="w-72 h-72 bg-gray-700 rounded-2xl flex items-center justify-center">
-                                    <span className="text-8xl"><img className='rounded-2xl' src={img3} alt="person" /></span>
+                                    <img className='rounded-2xl w-full h-full object-cover' src={img3} alt="Niloy Bhuiyan" />
                                 </div>
                             </div>
                             <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-500/20 rounded-full"></div>
@@ -25,20 +32,20 @@ const About: FC = () => {
                     </div>
 
                     {/* Right side - Content */}
-                    <div className="space-y-6">
+                    <div className="space-y-6 animate-fade-in-up animation-delay-400">
                         <h3 className="text-2xl md:text-3xl font-bold text-white">
                             I'm Niloy Bhuiyan, I am building my real world projects now.
                         </h3>
 
                         <p className="text-gray-300 text-lg leading-relaxed">
-                            I’m a beginner full-stack developer passionate about building modern web applications. I’ve been learning and practicing React, Node.js, and JavaScript,frameworks to create simple, functional, and user-friendly projects.
+                            I'm a beginner full-stack developer passionate about building modern web applications. I've been learning and practicing React, Node.js, and JavaScript frameworks to create simple, functional, and user-friendly projects.
                         </p>
 
                         <p className="text-gray-300 text-lg leading-relaxed">
-                            So far, I’ve completed several projects, which have helped me strengthen my understanding of web development fundamentals. I’m continuously exploring new technologies, experimenting with ideas, and working to improve my skills. My goal is to grow into a confident developer who can create scalable and impactful solutions.
+                            So far, I've completed several projects, which have helped me strengthen my understanding of web development fundamentals. I'm continuously exploring new technologies, experimenting with ideas, and working to improve my skills. My goal is to grow into a confident developer who can create scalable and impactful solutions.
                         </p>
 
-                        <div className="grid grid-cols-2 gap-6 pt-6">
+                        <div className="grid grid-cols-2 gap-6 pt-6 animate-fade-in-up animation-delay-600">
                             <div>
                                 <h4 className="text-blue-400 font-semibold mb-2">Age</h4>
                                 <p className="text-gray-300">23</p>
@@ -53,13 +60,15 @@ const About: FC = () => {
                             </div>
                             <div>
                                 <h4 className="text-blue-400 font-semibold mb-2">Projects</h4>
-                                <p className="text-gray-300"></p>
+                                <p className="text-gray-300">Learning & Building</p>
                             </div>
                         </div>
 
-                        <div className="pt-6">
-                            <a href="/Niloy_Bhuiyan_CV.pdf" download="Niloy_Bhuiyan_CV.pdf"
-                                className="inline-block px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+                        <div className="pt-6 animate-fade-in-up animation-delay-800">
+                            <a
+                                href={myCV}
+                                download="NiloyBhuiyan.pdf"
+                                className="inline-block px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
                             >
                                 Download CV
                             </a>

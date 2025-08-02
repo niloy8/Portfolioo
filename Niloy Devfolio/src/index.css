@@ -1,52 +1,6 @@
 @import "tailwindcss";
 
-/* Add to global CSS file */
-@keyframes fade-in-up {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animate-fade-in-up {
-    animation: fade-in-up 0.6s ease-out forwards;
-}
-
-.animation-delay-200 {
-    animation-delay: 0.2s;
-    opacity: 0;
-}
-
-.animation-delay-300 {
-    animation-delay: 0.3s;
-    opacity: 0;
-}
-
-.animation-delay-400 {
-    animation-delay: 0.4s;
-    opacity: 0;
-}
-
-.animation-delay-600 {
-    animation-delay: 0.6s;
-    opacity: 0;
-}
-
-.animation-delay-800 {
-    animation-delay: 0.8s;
-    opacity: 0;
-}
-
-.animation-delay-1000 {
-    animation-delay: 1s;
-}
-
-/* Add to  global CSS file*/
+/* Custom animations */
 @keyframes fade-in-up {
     from {
         opacity: 0;

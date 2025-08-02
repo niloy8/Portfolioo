@@ -1,6 +1,12 @@
 import type { FC } from 'react';
+import { useEffect } from 'react';
 
 const Projects: FC = () => {
+    useEffect(() => {
+        // Scroll to top on page load
+        window.scrollTo(0, 0);
+    }, []);
+
     const projects = [
         {
             id: 1,
@@ -61,21 +67,24 @@ const Projects: FC = () => {
     return (
         <section id="projects" className="py-20 bg-gray-900">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Header Section */}
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 animate-fade-in-up">
                         My <span className="text-blue-400">Projects</span>
                     </h2>
-                    <div className="w-24 h-1 bg-blue-400 mx-auto mb-6"></div>
-                    <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                    <div className="w-24 h-1 bg-blue-400 mx-auto mb-6 animate-fade-in-up animation-delay-200"></div>
+                    <p className="text-gray-400 text-lg max-w-2xl mx-auto animate-fade-in-up animation-delay-300">
                         Here are some of the projects I've worked on recently. Each project showcases different skills and technologies.
                     </p>
                 </div>
 
+                {/* Projects Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projects.map((project) => (
+                    {projects.map((project, index) => (
                         <div
                             key={project.id}
-                            className="bg-gray-800 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10"
+                            className={`bg-gray-800 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 animate-fade-in-up`}
+                            style={{ animationDelay: `${400 + index * 100}ms` }}
                         >
                             {/* Project Image */}
                             <div className="h-48 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 flex items-center justify-center">
@@ -103,13 +112,17 @@ const Projects: FC = () => {
                                 <div className="flex space-x-4">
                                     <a
                                         href={project.liveLink}
-                                        className="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-center rounded-lg transition-colors duration-300"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-center rounded-lg transition-all duration-300 transform hover:scale-105"
                                     >
                                         Live Demo
                                     </a>
                                     <a
                                         href={project.githubLink}
-                                        className="flex-1 px-4 py-2 border border-gray-600 hover:border-blue-400 text-gray-300 hover:text-white text-center rounded-lg transition-colors duration-300"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex-1 px-4 py-2 border border-gray-600 hover:border-blue-400 text-gray-300 hover:text-white text-center rounded-lg transition-all duration-300 transform hover:scale-105"
                                     >
                                         Code
                                     </a>
@@ -119,10 +132,11 @@ const Projects: FC = () => {
                     ))}
                 </div>
 
-                <div className="text-center mt-12">
+                {/* View All Projects Button */}
+                <div className="text-center mt-12 animate-fade-in-up animation-delay-1000">
                     <a
                         href="#"
-                        className="inline-block px-8 py-4 border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white rounded-lg transition-all duration-300"
+                        className="inline-block px-8 py-4 border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white rounded-lg transition-all duration-300 transform hover:scale-105"
                     >
                         View All Projects
                     </a>
