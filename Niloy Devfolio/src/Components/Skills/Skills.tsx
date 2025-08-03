@@ -99,8 +99,8 @@ const Skills: FC = () => {
                     </h3>
                     <div className="flex flex-wrap justify-center gap-4">
                         {[
-                            "Redux", "GraphQL", "Socket.io", "Material-UI", "Bootstrap",
-                            "Sass", "Webpack", "Babel", "ESLint", "Prettier", "Postman", "VS Code"
+                            "Bootstrap",
+                            "Babel", "ESLint", "Prettier", "VS Code", "Cursor", "Daisy UI", "React Icon", "Axios", "React Router"
                         ].map((tech, index) => (
                             <span
                                 key={index}
