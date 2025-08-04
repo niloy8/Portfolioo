@@ -2,6 +2,8 @@ import type { FC } from 'react';
 import { useEffect } from 'react';
 import firstProject from "../../assets/image.png"
 import secondProject from "../../assets/p-2.png"
+import thirdProject from "../../assets/P-3.png"
+import forthProject from "../../assets/p-4.png"
 const Projects: FC = () => {
     useEffect(() => {
         // Scroll to top on page load
@@ -14,18 +16,36 @@ const Projects: FC = () => {
             title: "Job Portal",
             description: "A full-stack job portal solution with React, Node.js, and MongoDB. Features include user authentication, job listings it is basically build for the practice of CRUD operations.",
             image: firstProject,
-            tags: ["React", "Node.js", "MongoDB", "Firebase", "Tailwind CSS"],
+            tags: ["React", "Node.js", "MongoDB", "Firebase", "Tailwind CSS", "React-Router", "Axios"],
             liveLink: "https://job-portal-ad35b.firebaseapp.com/",
             githubLink: "https://github.com/niloy8/Job-Portal-Project"
         },
         {
             id: 2,
             title: "Portfolio",
-            description: "A personal portfolio website built with React, Tailwind CSS and Typescript. Showcases my skills, projects, and experience. It is a multipage porfolio with the help of react router",
+            description: "A personal portfolio website built with React, Tailwind CSS and Typescript. Showcases my skills, projects, and experience. It is a multipage porfolio with the help of react router also it is fully responsive",
             image: secondProject,
-            tags: ["React", "TypeScript", "Netlify", "Tailwind CSS"],
+            tags: ["React", "TypeScript", "Netlify", "Tailwind CSS", "React-Router"],
             liveLink: "https://dancing-torrone-aac30d.netlify.app/",
             githubLink: "https://github.com/niloy8/Portfolioo/tree/main"
+        },
+        {
+            id: 3,
+            title: "SwapSavvy",
+            description: "A  platform for swapping skills from person to person. Only frontend technologies are used.",
+            image: thirdProject,
+            tags: ["React", "React Router", "Netlify", "Tailwind CSS"],
+            liveLink: "https://friendly-cannoli-1e01b4.netlify.app/",
+            githubLink: "https://github.com/niloy8/SwapSavvy"
+        },
+        {
+            id: 4,
+            title: "Homiee",
+            description: "It's an platform where people can only see their interest and connect with the same interested people based on hobbies. They also can post in a specific interest they can also delete the post and create a journal every day based on their learning and track their progress.The backend is not yet deployed. So most of the funtionality will not work it will be deployed soon.",
+            image: forthProject,
+            tags: ["React", "React Router", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+            liveLink: "https://illustrious-pie-f73077.netlify.app/",
+            githubLink: "https://github.com/niloy8/Virtualization-Of-Hobbyist"
         },
 
     ];
