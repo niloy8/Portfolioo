@@ -10,6 +10,7 @@ import {
 import Layout from './Components/Layout/Layout.tsx';
 import Home from './Home/Home.tsx';
 import About from './Components/About/About.tsx';
+import Contact from './Components/Contact/Contact.tsx';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       }, {
         path: "/about",
         element: <About />
+      },
+      {
+        path: "/contact",
+        element: <Contact />
       }
     ]
   },

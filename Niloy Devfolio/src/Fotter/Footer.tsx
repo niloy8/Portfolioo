@@ -70,18 +70,11 @@ const Footer: FC = () => {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                    <p className="text-gray-400 text-sm">
-                        © {currentYear} Niloy Ahmed. All rights reserved.
+                <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-center items-center ">
+                    <p className="text-gray-400 text-sm ">
+                        © {currentYear} Niloy Bhuiyan. All rights reserved.
                     </p>
-                    <div className="flex space-x-6 mt-4 md:mt-0">
-                        <a href="#" className="text-gray-400 hover:text-blue-400 text-sm transition-colors duration-300">
-                            Privacy Policy
-                        </a>
-                        <a href="#" className="text-gray-400 hover:text-blue-400 text-sm transition-colors duration-300">
-                            Terms of Service
-                        </a>
-                    </div>
+
                 </div>
             </div>
         </footer>

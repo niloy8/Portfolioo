@@ -10,7 +10,6 @@ const Home: FC = () => {
         'Full Stack Developer',
         'Frontend Developer',
         'React Developer',
-
     ];
 
     // Typewriter effect
@@ -39,12 +38,18 @@ const Home: FC = () => {
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            const navbarHeight = 80;
+            const offsetTop = element.offsetTop - navbarHeight;
+
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
         }
     };
 
     return (
-        <section id="home" className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center relative overflow-hidden">
+        <section id="home" className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center relative overflow-hidden pt-20">
             {/* Background decorative elements */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>

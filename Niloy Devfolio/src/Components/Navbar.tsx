@@ -1,9 +1,11 @@
 import type { FC } from 'react';
 import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router';
 
 const Navbar: FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const location = useLocation();
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -24,6 +26,23 @@ const Navbar: FC = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Close mobile menu when route changes
+    useEffect(() => {
+        setIsOpen(false);
+    }, [location]);
+
+    const navItems = [
+        { name: 'Home', path: '/' },
+        { name: 'About', path: '/about' },
+        { name: 'Projects', path: '/projects' },
+        { name: 'Skills', path: '/skills' },
+        { name: 'Contact', path: '/contact' }
+    ];
+
+    const isActiveRoute = (path: string) => {
+        return location.pathname === path;
+    };
+
     return (
         <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled
             ? 'bg-gray-900/95 backdrop-blur-md shadow-xl border-b border-gray-700/30'
@@ -33,27 +52,32 @@ const Navbar: FC = () => {
                 <div className="flex justify-between items-center h-16 md:h-20">
                     {/* Logo/Name */}
                     <div className="flex-shrink-0">
-                        <a
-                            href="#home"
-                            onClick={closeMenu}
+                        <Link
+                            to="/"
                             className="text-2xl md:text-3xl font-bold text-white hover:text-blue-400 transition-colors duration-300"
                         >
                             Niloy Devfolio
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:block">
                         <div className="ml-10 flex items-baseline space-x-8">
-                            {['Home', 'About', 'Projects', 'Skills', 'Contact'].map((item) => (
-                                <a
-                                    key={item}
-                                    href={`#${item.toLowerCase()}`}
-                                    className="relative px-3 py-2 text-gray-300 font-medium hover:text-white transition-colors duration-300 group"
+                            {navItems.map((item) => (
+                                <Link
+                                    key={item.name}
+                                    to={item.path}
+                                    className={`relative px-3 py-2 font-medium transition-colors duration-300 group ${isActiveRoute(item.path)
+                                        ? 'text-blue-400'
+                                        : 'text-gray-300 hover:text-white'
+                                        }`}
                                 >
-                                    {item}
-                                    <span className="absolute inset-x-0 bottom-0 h-0.5 bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                                </a>
+                                    {item.name}
+                                    <span className={`absolute inset-x-0 bottom-0 h-0.5 bg-blue-500 transition-transform duration-300 origin-left ${isActiveRoute(item.path)
+                                        ? 'scale-x-100'
+                                        : 'scale-x-0 group-hover:scale-x-100'
+                                        }`}></span>
+                                </Link>
                             ))}
                         </div>
                     </div>
@@ -85,15 +109,18 @@ const Navbar: FC = () => {
                 : 'max-h-0 opacity-0 overflow-hidden'
                 }`}>
                 <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-900/98 backdrop-blur-md shadow-xl border-t border-gray-700/30">
-                    {['Home', 'About', 'Projects', 'Skills', 'Contact'].map((item) => (
-                        <a
-                            key={item}
-                            href={`#${item.toLowerCase()}`}
+                    {navItems.map((item) => (
+                        <Link
+                            key={item.name}
+                            to={item.path}
                             onClick={closeMenu}
-                            className="block px-4 py-3 text-gray-300 font-medium hover:text-white hover:bg-gray-800 rounded-lg transition-all duration-300 transform hover:translate-x-2"
+                            className={`block px-4 py-3 font-medium rounded-lg transition-all duration-300 transform hover:translate-x-2 ${isActiveRoute(item.path)
+                                ? 'text-blue-400 bg-gray-800'
+                                : 'text-gray-300 hover:text-white hover:bg-gray-800'
+                                }`}
                         >
-                            {item}
-                        </a>
+                            {item.name}
+                        </Link>
                     ))}
                 </div>
             </div>
