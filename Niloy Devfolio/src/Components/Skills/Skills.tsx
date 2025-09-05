@@ -5,7 +5,7 @@ import { FaFigma, FaGithub, FaJsSquare, FaNode, FaReact } from "react-icons/fa";
 import { RiTailwindCssFill } from 'react-icons/ri';
 import { SiExpress, SiFirebase, SiMongodb } from 'react-icons/si';
 import { TiHtml5 } from 'react-icons/ti';
-
+import { RiNextjsLine } from "react-icons/ri";
 const Skills: FC = () => {
     useEffect(() => {
         // Scroll to top on page load
@@ -18,6 +18,7 @@ const Skills: FC = () => {
             skills: [
                 { name: "React", icon: <FaReact className='text-zinc-100' /> },
                 { name: "TypeScript", level: 'Beginner', icon: <BiLogoTypescript className='text-zinc-100' /> },
+                { name: "Next.js", level: 'Beginner', icon: <RiNextjsLine className='text-zinc-100' /> },
                 { name: "JavaScript", icon: <FaJsSquare className='text-zinc-100' /> },
                 { name: "HTML/CSS", icon: <TiHtml5 className='text-zinc-100' /> },
                 { name: "Tailwind CSS", icon: <RiTailwindCssFill className='text-zinc-100' /> },
@@ -35,8 +36,8 @@ const Skills: FC = () => {
         {
             title: "Tools & Others",
             skills: [
-                { name: "Git", icon: <FaGithub className='text-zinc-100' /> },
 
+                { name: "Git", icon: <FaGithub className='text-zinc-100' /> },
                 { name: "Figma", level: 'Basic', icon: <FaFigma className='text-zinc-100' /> },
 
             ]

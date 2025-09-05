@@ -41,7 +41,7 @@ const Projects: FC = () => {
         {
             id: 4,
             title: "Homiee",
-            description: "It's an platform where people can only see their interest and connect with the same interested people based on hobbies. They also can post in a specific interest they can also delete the post and create a journal every day based on their learning and track their progress.The backend is not yet deployed. So most of the funtionality will not work it will be deployed soon.",
+            description: "It's an platform where people can only see their interest and connect with the same interested people based on hobbies. They also can post in a specific interest they can also delete the post and create a journal every day based on their learning and track their progress.The backend is now deployed. You can login with email after singup. Post and journal features are now available. Also chat feature is available.",
             image: forthProject,
             tags: ["React", "React Router", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
             liveLink: "https://illustrious-pie-f73077.netlify.app/",
