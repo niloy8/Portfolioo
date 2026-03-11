@@ -1,5 +1,5 @@
-import React from 'react';
-import { ExternalLink, Github, ArrowRight } from 'lucide-react';
+import { ExternalLink, ArrowRight } from 'lucide-react';
+import { FaGithub } from 'react-icons/fa6';
 
 const projects = [
   {
@@ -71,7 +71,7 @@ const Projects: React.FC = () => {
                                     <ExternalLink size={16} /> Live Demo
                                 </a>
                                 <a href={project.github} className="flex items-center gap-2 text-sm font-bold hover:text-[var(--accent)] transition-colors">
-                                    <Github size={16} /> Source
+                                    <FaGithub size={16} /> Source
                                 </a>
                             </div>
                         </div>

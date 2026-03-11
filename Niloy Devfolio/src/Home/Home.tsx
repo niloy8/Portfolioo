@@ -1,5 +1,5 @@
-import React from 'react';
-import { ArrowUpRight, Github, Linkedin, Twitter } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
 import { Link } from 'react-router';
 
 const Home: React.FC = () => {
@@ -17,33 +17,23 @@ const Home: React.FC = () => {
                     </div>
 
                     <p className="text-xl md:text-2xl text-[var(--text-secondary)] leading-relaxed max-w-2xl font-light">
-                        Building premium digital experiences through minimal design and clean code. 
+                        Building premium digital experiences through minimal design and clean code.
                         Currently obsessed with <span className="text-[var(--text-primary)] font-medium">Agentic AI</span> and <span className="text-[var(--text-primary)] font-medium">Modern Web Architectures</span>.
                     </p>
 
                     <div className="flex flex-wrap items-center gap-8">
-                        <Link 
-                            to="/projects" 
+                        <Link
+                            to="/projects"
                             className="group flex items-center gap-3 bg-[var(--accent)] text-[var(--bg)] px-8 py-4 rounded-full font-bold hover:scale-[1.02] transition-all duration-300 shadow-xl shadow-[var(--accent)]/10"
                         >
                             Explore Work
                             <ArrowUpRight className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                         </Link>
-                        
-                        <div className="flex items-center gap-6">
-                            {[
-                                { icon: Github, href: "https://github.com" },
-                                { icon: Linkedin, href: "https://linkedin.com" },
-                                { icon: Twitter, href: "https://twitter.com" }
-                            ].map((social, i) => (
-                                <a 
-                                    key={i} 
-                                    href={social.href} 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-all duration-300 transform hover:scale-110"
-                                >
-                                    <social.icon size={26} />
+
+                        <div className="flex gap-6">
+                            {[FaGithub, FaLinkedin, FaXTwitter].map((Icon, i) => (
+                                <a key={i} href="#" className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-all duration-300 transform hover:scale-110">
+                                    <Icon size={24} />
                                 </a>
                             ))}
                         </div>
@@ -55,7 +45,7 @@ const Home: React.FC = () => {
                     <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-[2.5rem] overflow-hidden bg-[var(--text-secondary)]/10 border border-[var(--text-secondary)]/20 shadow-2xl">
                         {/* Demo data for profile image */}
                         <div className="w-full h-full flex items-center justify-center text-[var(--accent)]">
-                           <User size={120} strokeWidth={1} />
+                           <UserPlaceholder size={120} strokeWidth={1} />
                         </div>
                     </div>
                 </div>
@@ -63,15 +53,15 @@ const Home: React.FC = () => {
 
             <div className="mt-32 pt-16 border-t border-[var(--text-secondary)]/10 grid grid-cols-2 md:grid-cols-4 gap-8">
                 {[
-                  { label: "Experience", value: "3+ Years" },
-                  { label: "Projects", value: "15+ Completed" },
-                  { label: "Focus", value: "Full-Stack" },
-                  { label: "Location", value: "Global Remote" }
+                    { label: "Experience", value: "3+ Years" },
+                    { label: "Projects", value: "15+ Completed" },
+                    { label: "Focus", value: "Full-Stack" },
+                    { label: "Location", value: "Global Remote" }
                 ].map((stat, i) => (
-                  <div key={i} className="space-y-1">
-                    <p className="text-xs uppercase tracking-widest text-[var(--text-secondary)] font-bold">{stat.label}</p>
-                    <p className="text-xl font-serif text-[var(--text-primary)] font-bold">{stat.value}</p>
-                  </div>
+                    <div key={i} className="space-y-1">
+                        <p className="text-xs uppercase tracking-widest text-[var(--text-secondary)] font-bold">{stat.label}</p>
+                        <p className="text-xl font-serif text-[var(--text-primary)] font-bold">{stat.value}</p>
+                    </div>
                 ))}
             </div>
         </section>
@@ -79,15 +69,15 @@ const Home: React.FC = () => {
 };
 
 // Help helper for visual placeholder if icon fails or to avoid extra imports for now
-const User = ({ size, strokeWidth }: { size: number, strokeWidth: number }) => (
-    <svg 
-        width={size} 
-        height={size} 
-        viewBox="0 0 24 24" 
-        fill="none" 
-        stroke="currentColor" 
-        strokeWidth={strokeWidth} 
-        strokeLinecap="round" 
+const UserPlaceholder = ({ size, strokeWidth }: { size: number, strokeWidth: number }) => (
+    <svg
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={strokeWidth}
+        strokeLinecap="round"
         strokeLinejoin="round"
     >
         <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Send, Mail, MapPin, Phone, Github, Linkedin, Twitter } from 'lucide-react';
+import { Send, Mail, MapPin, Phone } from 'lucide-react';
+import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
 
 const Contact: React.FC = () => {
     return (
@@ -36,7 +36,7 @@ const Contact: React.FC = () => {
                     <div className="pt-8 space-y-4">
                         <p className="text-sm uppercase tracking-widest text-[var(--text-secondary)] font-bold">Follow Me</p>
                         <div className="flex gap-6">
-                            {[Github, Linkedin, Twitter].map((Icon, i) => (
+                            {[FaGithub, FaLinkedin, FaXTwitter].map((Icon, i) => (
                                 <a key={i} href="#" className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-all duration-300 transform hover:scale-110">
                                     <Icon size={24} />
                                 </a>

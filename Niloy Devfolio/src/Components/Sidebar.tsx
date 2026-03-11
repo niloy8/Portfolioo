@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router';
-import { Home, User, Briefcase, Mail, Sun, Moon, Github, Linkedin, Twitter } from 'lucide-react';
+import { Home, User, Briefcase, Mail, Sun, Moon } from 'lucide-react';
+import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
 import { useTheme } from '../ThemeContext';
 
 const Sidebar: React.FC = () => {
@@ -14,19 +15,19 @@ const Sidebar: React.FC = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com' },
-    { icon: Linkedin, href: 'https://linkedin.com' },
-    { icon: Twitter, href: 'https://twitter.com' },
+    { icon: FaGithub, href: 'https://github.com' },
+    { icon: FaLinkedin, href: 'https://linkedin.com' },
+    { icon: FaXTwitter, href: 'https://twitter.com' },
   ];
 
   return (
     <aside className="fixed left-0 top-0 h-screen w-20 md:w-64 bg-[var(--bg)] border-r border-[var(--text-secondary)]/10 flex flex-col justify-between py-8 px-4 z-50 transition-all duration-300">
       <div>
         <div className="flex items-center justify-center md:justify-start md:px-4 mb-12">
-          <div className="w-10 h-10 bg-[var(--accent)] rounded-lg flex items-center justify-center text-[var(--bg)] font-serif text-xl font-bold">
-            N
+          <div className="w-10 h-10">
+            <img className='rounded' src="../public/favicon.png" alt="" />
           </div>
-          <span className="hidden md:block ml-3 font-serif text-xl font-bold tracking-tight">Portfolio</span>
+
         </div>
 
         <nav className="space-y-4">
@@ -52,7 +53,7 @@ const Sidebar: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center justify-center md:justify-start md:px-4 gap-4">
           <button
             onClick={toggleTheme}
-            className="p-3 rounded-xl bg-[var(--text-secondary)]/5 text-[var(--text-secondary)] hover:text-[var(--accent)] hover:bg-[var(--accent)]/10 transition-all duration-200"
+            className="p-3 rounded-xl bg-[var(--text-secondary)]/5 text-[var(--text-secondary)] hover:text-[var(--accent)] hover:bg-[var(--accent)]/10 transition-all duration-200 cursor-pointer"
             aria-label="Toggle theme"
           >
             {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
