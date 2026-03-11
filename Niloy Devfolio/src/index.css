@@ -1,45 +1,50 @@
 @import "tailwindcss";
 
-@theme {
+:root {
+  /* Design System Variables */
+  --bg: #FDFCFB;
+  --text-primary: #2D2926;
+  --text-secondary: #6B6054;
+  --accent: #8B5E3C;
+  
+  --font-serif: "Lora", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  /* Tailwind 4 automatic variable mapping */
   --color-brand-bg: #FDFCFB;
   --color-brand-text-primary: #2D2926;
   --color-brand-text-secondary: #6B6054;
   --color-brand-accent: #8B5E3C;
-  
-  --color-brand-bg-dark: #1A1A1A;
-  --color-brand-text-primary-dark: #F5F5F5;
-  --color-brand-text-secondary-dark: #A0A0A0;
-  --color-brand-accent-dark: #D2B48C;
+}
 
-  --font-serif: "Lora", serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+:root.dark {
+  --bg: #1A1A1A;
+  --text-primary: #F5F5F5;
+  --text-secondary: #A0A0A0;
+  --accent: #D2B48C;
+
+  --color-brand-bg: #1A1A1A;
+  --color-brand-text-primary: #F5F5F5;
+  --color-brand-text-secondary: #A0A0A0;
+  --color-brand-accent: #D2B48C;
 }
 
 @layer base {
-  :root {
-    --bg: var(--color-brand-bg);
-    --text-primary: var(--color-brand-text-primary);
-    --text-secondary: var(--color-brand-text-secondary);
-    --accent: var(--color-brand-accent);
-  }
-
-  :root.dark {
-    --bg: var(--color-brand-bg-dark);
-    --text-primary: var(--color-brand-text-primary-dark);
-    --text-secondary: var(--color-brand-text-secondary-dark);
-    --accent: var(--color-brand-accent-dark);
-  }
-
   body {
-    @apply bg-[var(--bg)] text-[var(--text-primary)] font-sans transition-colors duration-300;
+    background-color: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif text-[var(--text-primary)];
+    font-family: var(--font-serif);
+    color: var(--text-primary);
   }
 
   p {
-    @apply text-[var(--text-secondary)];
+    color: var(--text-secondary);
   }
 }
 
@@ -77,9 +82,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-[var(--accent)] opacity-20 rounded-full;
+  background-color: var(--accent);
+  opacity: 0.2;
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-[var(--accent)] opacity-40;
+  background-color: var(--accent);
+  opacity: 0.4;
 }

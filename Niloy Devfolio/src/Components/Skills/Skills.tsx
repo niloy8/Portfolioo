@@ -1,27 +1,27 @@
 import React from 'react';
-import { Code2, Terminal, Cpu, Layout, Database, Layers } from 'lucide-react';
+import { Terminal, Cpu, Layout, Layers } from 'lucide-react';
 
 const skillCategories = [
-  {
-    title: "Frontend Development",
-    icon: Layout,
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Redux"]
-  },
-  {
-    title: "Backend & DevOps",
-    icon: Terminal,
-    skills: ["Node.js", "Express", "Python", "Docker", "PostgreSQL", "MongoDB"]
-  },
-  {
-    title: "Tools & Architectures",
-    icon: Layers,
-    skills: ["Git", "REST APIs", "GraphQL", "Microservices", "Unit Testing", "CI/CD"]
-  },
-  {
-    title: "Specialties",
-    icon: Cpu,
-    skills: ["Agentic AI", "Real-time Systems", "System Design", "UI/UX Principles"]
-  }
+    {
+        title: "Frontend Development",
+        icon: Layout,
+        skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Redux"]
+    },
+    {
+        title: "Backend & DevOps",
+        icon: Terminal,
+        skills: ["Node.js", "Express", "Python", "Docker", "PostgreSQL", "MongoDB"]
+    },
+    {
+        title: "Tools & Architectures",
+        icon: Layers,
+        skills: ["Git", "REST APIs", "GraphQL", "Microservices", "Unit Testing", "CI/CD"]
+    },
+    {
+        title: "Specialties",
+        icon: Cpu,
+        skills: ["Agentic AI", "Real-time Systems", "System Design", "UI/UX Principles"]
+    }
 ];
 
 const Skills: React.FC = () => {
@@ -36,16 +36,16 @@ const Skills: React.FC = () => {
                 {skillCategories.map((category, i) => (
                     <div key={i} className="bg-[var(--text-secondary)]/5 border border-[var(--text-secondary)]/10 rounded-3xl p-8 hover:bg-[var(--text-secondary)]/8 transition-all duration-300 group">
                         <div className="flex items-center gap-4 mb-8">
-                           <div className="w-12 h-12 bg-[var(--accent)]/10 text-[var(--accent)] rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                              <category.icon size={24} />
-                           </div>
-                           <h3 className="text-xl font-bold">{category.title}</h3>
+                            <div className="w-12 h-12 bg-[var(--accent)]/10 text-[var(--accent)] rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <category.icon size={24} />
+                            </div>
+                            <h3 className="text-xl font-bold">{category.title}</h3>
                         </div>
 
                         <div className="flex flex-wrap gap-3">
                             {category.skills.map((skill, j) => (
-                                <span 
-                                    key={j} 
+                                <span
+                                    key={j}
                                     className="px-4 py-2 bg-[var(--bg)] border border-[var(--text-secondary)]/10 text-[var(--text-secondary)] text-sm rounded-xl hover:border-[var(--accent)]/50 hover:text-[var(--accent)] transition-all duration-300 hover:scale-105 cursor-default shadow-sm"
                                 >
                                     {skill}

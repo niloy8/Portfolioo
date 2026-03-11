@@ -35,10 +35,9 @@ const Sidebar: React.FC = () => {
               key={item.name}
               to={item.path}
               className={({ isActive }) =>
-                `flex items-center justify-center md:justify-start md:px-4 py-3 rounded-xl transition-all duration-200 group ${
-                  isActive
-                    ? 'bg-[var(--accent)]/10 text-[var(--accent)]'
-                    : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--text-secondary)]/5'
+                `flex items-center justify-center md:justify-start md:px-4 py-3 rounded-xl transition-all duration-200 group ${isActive
+                  ? 'bg-[var(--accent)]/10 text-[var(--accent)]'
+                  : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--text-secondary)]/5'
                 }`
               }
             >
@@ -58,7 +57,7 @@ const Sidebar: React.FC = () => {
           >
             {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
           </button>
-          
+
           <div className="hidden md:flex items-center gap-3">
             {socialLinks.map((link, i) => (
               <a
@@ -75,7 +74,7 @@ const Sidebar: React.FC = () => {
         </div>
 
         <div className="md:px-4 text-[10px] text-[var(--text-secondary)]/50 hidden md:block">
-          © 2026 Niloy Bhuiyan
+          © 2025 Niloy Bhuiyan
         </div>
       </div>
     </aside>
