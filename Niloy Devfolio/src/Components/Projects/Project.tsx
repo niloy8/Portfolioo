@@ -1,132 +1,90 @@
-import type { FC } from 'react';
-import { useEffect } from 'react';
-import firstProject from "../../assets/image.png"
-import secondProject from "../../assets/p-2.png"
-import thirdProject from "../../assets/P-3.png"
-import forthProject from "../../assets/p-4.png"
-const Projects: FC = () => {
-    useEffect(() => {
-        // Scroll to top on page load
-        window.scrollTo(0, 0);
-    }, []);
+import React from 'react';
+import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 
-    const projects = [
-        {
-            id: 1,
-            title: "Job Portal",
-            description: "A full-stack job portal solution with React, Node.js, and MongoDB. Features include user authentication, job listings it is basically build for the practice of CRUD operations.",
-            image: firstProject,
-            tags: ["React", "Node.js", "MongoDB", "Firebase", "Tailwind CSS", "React-Router", "Axios"],
-            liveLink: "https://job-portal-ad35b.firebaseapp.com/",
-            githubLink: "https://github.com/niloy8/Job-Portal-Project"
-        },
-        {
-            id: 2,
-            title: "Portfolio",
-            description: "A personal portfolio website built with React, Tailwind CSS and Typescript. Showcases my skills, projects, and experience. It is a multipage porfolio with the help of react router also it is fully responsive",
-            image: secondProject,
-            tags: ["React", "TypeScript", "Netlify", "Tailwind CSS", "React-Router"],
-            liveLink: "https://dancing-torrone-aac30d.netlify.app/",
-            githubLink: "https://github.com/niloy8/Portfolioo/tree/main"
-        },
-        {
-            id: 3,
-            title: "SwapSavvy",
-            description: "A  platform for swapping skills from person to person. Only frontend technologies are used.",
-            image: thirdProject,
-            tags: ["React", "React Router", "Netlify", "Tailwind CSS"],
-            liveLink: "https://friendly-cannoli-1e01b4.netlify.app/",
-            githubLink: "https://github.com/niloy8/SwapSavvy"
-        },
-        {
-            id: 4,
-            title: "Homiee",
-            description: "It's an platform where people can only see their interest and connect with the same interested people based on hobbies. They also can post in a specific interest they can also delete the post and create a journal every day based on their learning and track their progress.The backend is now deployed. You can login with email after singup. Post and journal features are now available. Also chat feature is available.",
-            image: forthProject,
-            tags: ["React", "React Router", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
-            liveLink: "https://illustrious-pie-f73077.netlify.app/",
-            githubLink: "https://github.com/niloy8/Virtualization-Of-Hobbyist"
-        },
+const projects = [
+  {
+    title: "Devrachtpatser Onvyo ERP",
+    description: "A full ERP system developed from scratch with real-time admin dashboards for HR, finance, and lead management. Built for scalability and high performance.",
+    tags: ["React", "Node.js", "PostgreSQL", "Tailwind"],
+    link: "#",
+    github: "#"
+  },
+  {
+    title: "TextGPT & IQR Codes",
+    description: "An AI text service for automated text generation and texting workflows, built to be white-labeled and easily integrated into existing systems.",
+    tags: ["Next.js", "OpenAI", "TypeScript"],
+    link: "#",
+    github: "#"
+  },
+  {
+    title: "Top Floor Trends",
+    description: "A complete web and content update focused on improving search visibility and user experience. Built with performance and SEO in mind.",
+    tags: ["Vite", "SEO", "CSS3"],
+    link: "#",
+    github: "#"
+  },
+  {
+    title: "VidalSigns",
+    description: "An AI powered medical assistant that converts complex lab reports into simple, actionable explanations for patients and healthcare providers.",
+    tags: ["React Native", "Python", "ML"],
+    link: "#",
+    github: "#"
+  }
+];
 
-    ];
-
+const Projects: React.FC = () => {
     return (
-        <section id="projects" className="py-20 bg-gray-900">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Header Section */}
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 animate-fade-in-up">
-                        My <span className="text-blue-400">Projects</span>
-                    </h2>
-                    <div className="w-24 h-1 bg-blue-400 mx-auto mb-6 animate-fade-in-up animation-delay-200"></div>
-                    <p className="text-gray-400 text-lg max-w-2xl mx-auto animate-fade-in-up animation-delay-300">
-                        Here are some of the projects I've worked on recently. Each project showcases different skills and technologies.
-                    </p>
-                </div>
+        <section className="animate-fade-in py-12 space-y-16">
+            <div className="space-y-4">
+                <h2 className="text-[var(--accent)] font-sans text-sm tracking-[0.2em] uppercase font-bold">Selected Work</h2>
+                <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Showcase of <span className="italic font-serif">Engineering</span></h1>
+            </div>
 
-                {/* Projects Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projects.map((project, index) => (
-                        <div
-                            key={project.id}
-                            className={`bg-gray-800 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 animate-fade-in-up`}
-                            style={{ animationDelay: `${400 + index * 100}ms` }}
-                        >
-                            {/* Project Image */}
-                            <div className="h-48 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 flex items-center justify-center">
-                                <span className="text-6xl"><img className='h-48 rounded-t-2xl' src={project.image} alt="Project-1" /></span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {projects.map((project, i) => (
+                    <div 
+                        key={i} 
+                        className="group relative bg-[var(--text-secondary)]/5 border border-[var(--text-secondary)]/10 rounded-3xl p-8 hover:bg-[var(--text-secondary)]/10 transition-all duration-500 overflow-hidden"
+                    >
+                        <div className="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                           <ArrowRight className="text-[var(--accent)] -rotate-45 group-hover:rotate-0 transition-transform duration-500" size={32} />
+                        </div>
+
+                        <div className="space-y-6">
+                            <div className="flex flex-wrap gap-2">
+                                {project.tags.map((tag, j) => (
+                                    <span key={j} className="text-[10px] uppercase tracking-widest font-bold px-3 py-1 bg-[var(--accent)]/10 text-[var(--accent)] rounded-full">
+                                        {tag}
+                                    </span>
+                                ))}
                             </div>
 
-                            {/* Project Content */}
-                            <div className="p-6">
-                                <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
-                                <p className="text-gray-400 mb-4">{project.description}</p>
+                            <div className="space-y-2">
+                                <h3 className="text-2xl font-bold group-hover:text-[var(--accent)] transition-colors duration-300">{project.title}</h3>
+                                <p className="text-[var(--text-secondary)] leading-relaxed font-light">
+                                    {project.description}
+                                </p>
+                            </div>
 
-                                {/* Tags */}
-                                <div className="flex flex-wrap gap-2 mb-6">
-                                    {project.tags.map((tag) => (
-                                        <span
-                                            key={tag}
-                                            className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm"
-                                        >
-                                            {tag}
-                                        </span>
-                                    ))}
-                                </div>
-
-                                {/* Action Buttons */}
-                                <div className="flex space-x-4">
-                                    <a
-                                        href={project.liveLink}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-center rounded-lg transition-all duration-300 transform hover:scale-105"
-                                    >
-                                        Live Demo
-                                    </a>
-                                    <a
-                                        href={project.githubLink}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex-1 px-4 py-2 border border-gray-600 hover:border-blue-400 text-gray-300 hover:text-white text-center rounded-lg transition-all duration-300 transform hover:scale-105"
-                                    >
-                                        Code
-                                    </a>
-                                </div>
+                            <div className="flex items-center gap-6 pt-4">
+                                <a href={project.link} className="flex items-center gap-2 text-sm font-bold hover:text-[var(--accent)] transition-colors">
+                                    <ExternalLink size={16} /> Live Demo
+                                </a>
+                                <a href={project.github} className="flex items-center gap-2 text-sm font-bold hover:text-[var(--accent)] transition-colors">
+                                    <Github size={16} /> Source
+                                </a>
                             </div>
                         </div>
-                    ))}
-                </div>
+                    </div>
+                ))}
+            </div>
 
-                {/* View All Projects Button  if needed in future*/}
-                {/* <div className="text-center mt-12 animate-fade-in-up animation-delay-1000">
-                    <a
-                        href="#"
-                        className="inline-block px-8 py-4 border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white rounded-lg transition-all duration-300 transform hover:scale-105"
-                    >
-                        View All Projects
-                    </a>
-                </div> */}
+            <div className="pt-20 text-center">
+                <p className="text-[var(--text-secondary)] mb-8 font-light italic text-lg">"Quality is not an act, it is a habit."</p>
+                <div className="inline-flex items-center gap-4 text-sm font-bold tracking-widest uppercase text-[var(--text-primary)] cursor-pointer hover:text-[var(--accent)] transition-colors group">
+                    View Archive 
+                    <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+                </div>
             </div>
         </section>
     );

@@ -1,118 +1,63 @@
-import type { FC } from 'react';
-import { useEffect } from 'react';
-import { BiLogoTypescript } from 'react-icons/bi';
-import { FaFigma, FaGithub, FaJsSquare, FaNode, FaReact } from "react-icons/fa";
-import { RiTailwindCssFill } from 'react-icons/ri';
-import { SiExpress, SiFirebase, SiMongodb } from 'react-icons/si';
-import { TiHtml5 } from 'react-icons/ti';
-import { RiNextjsLine } from "react-icons/ri";
-const Skills: FC = () => {
-    useEffect(() => {
-        // Scroll to top on page load
-        window.scrollTo(0, 0);
-    }, []);
+import React from 'react';
+import { Code2, Terminal, Cpu, Layout, Database, Layers } from 'lucide-react';
 
-    const skillCategories = [
-        {
-            title: "Frontend",
-            skills: [
-                { name: "React", icon: <FaReact className='text-zinc-100' /> },
-                { name: "TypeScript", level: 'Beginner', icon: <BiLogoTypescript className='text-zinc-100' /> },
-                { name: "Next.js", level: 'Beginner', icon: <RiNextjsLine className='text-zinc-100' /> },
-                { name: "JavaScript", icon: <FaJsSquare className='text-zinc-100' /> },
-                { name: "HTML/CSS", icon: <TiHtml5 className='text-zinc-100' /> },
-                { name: "Tailwind CSS", icon: <RiTailwindCssFill className='text-zinc-100' /> },
-            ]
-        },
-        {
-            title: "Backend",
-            skills: [
-                { name: "Node.js", icon: <FaNode className='text-zinc-100' /> },
-                { name: "Express.js", icon: <SiExpress className='text-zinc-100' /> },
-                { name: "MongoDB", icon: <SiMongodb className='text-zinc-100' /> },
-                { name: "Firebase", icon: <SiFirebase className='text-zinc-100' /> }
-            ]
-        },
-        {
-            title: "Tools & Others",
-            skills: [
+const skillCategories = [
+  {
+    title: "Frontend Development",
+    icon: Layout,
+    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Redux"]
+  },
+  {
+    title: "Backend & DevOps",
+    icon: Terminal,
+    skills: ["Node.js", "Express", "Python", "Docker", "PostgreSQL", "MongoDB"]
+  },
+  {
+    title: "Tools & Architectures",
+    icon: Layers,
+    skills: ["Git", "REST APIs", "GraphQL", "Microservices", "Unit Testing", "CI/CD"]
+  },
+  {
+    title: "Specialties",
+    icon: Cpu,
+    skills: ["Agentic AI", "Real-time Systems", "System Design", "UI/UX Principles"]
+  }
+];
 
-                { name: "Git", icon: <FaGithub className='text-zinc-100' /> },
-                { name: "Figma", level: 'Basic', icon: <FaFigma className='text-zinc-100' /> },
-
-            ]
-        }
-    ];
-
+const Skills: React.FC = () => {
     return (
-        <section id="skills" className="py-20 bg-gray-800">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Header Section */}
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 animate-fade-in-up">
-                        My <span className="text-blue-400">Skills</span>
-                    </h2>
-                    <div className="w-24 h-1 bg-blue-400 mx-auto mb-6 animate-fade-in-up animation-delay-200"></div>
-                    <p className="text-gray-400 text-lg max-w-2xl mx-auto animate-fade-in-up animation-delay-300">
-                        Technologies and tools I use to bring ideas to life
-                    </p>
-                </div>
+        <section className="animate-fade-in py-12 space-y-16">
+            <div className="space-y-4">
+                <h2 className="text-[var(--accent)] font-sans text-sm tracking-[0.2em] uppercase font-bold">Tech Stack</h2>
+                <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Tools of the <span className="italic font-serif">Trade</span></h1>
+            </div>
 
-                {/* Skills Categories */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {skillCategories.map((category, categoryIndex) => (
-                        <div
-                            key={categoryIndex}
-                            className={`bg-gray-900 rounded-xl p-8 hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-fade-in-up`}
-                            style={{ animationDelay: `${400 + categoryIndex * 200}ms` }}
-                        >
-                            <h3 className="text-2xl font-bold text-white mb-8 text-center">
-                                {category.title}
-                            </h3>
-
-                            <div className="space-y-6">
-                                {category.skills.map((skill, skillIndex) => (
-                                    <div key={skillIndex} className="group">
-                                        <div className="flex items-center justify-between mb-2">
-                                            <div className="flex items-center space-x-3">
-                                                <span className="text-2xl">{skill.icon}</span>
-                                                <span className="text-gray-300 font-medium">{skill.name}</span>
-                                            </div>
-                                            <span className="text-blue-400 font-semibold">
-                                                {skill.level}
-                                            </span>
-                                        </div>
-
-                                        <div className="w-full bg-gray-700 rounded-full h-2">
-
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {skillCategories.map((category, i) => (
+                    <div key={i} className="bg-[var(--text-secondary)]/5 border border-[var(--text-secondary)]/10 rounded-3xl p-8 hover:bg-[var(--text-secondary)]/8 transition-all duration-300 group">
+                        <div className="flex items-center gap-4 mb-8">
+                           <div className="w-12 h-12 bg-[var(--accent)]/10 text-[var(--accent)] rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                              <category.icon size={24} />
+                           </div>
+                           <h3 className="text-xl font-bold">{category.title}</h3>
                         </div>
-                    ))}
-                </div>
 
-                {/* Additional Skills */}
-                <div className="mt-16 animate-fade-in-up animation-delay-1000">
-                    <h3 className="text-2xl font-bold text-white text-center mb-8">
-                        Other Technologies
-                    </h3>
-                    <div className="flex flex-wrap justify-center gap-4">
-                        {[
-                            "Bootstrap",
-                            "Babel", "ESLint", "Prettier", "VS Code", "Cursor", "Daisy UI", "React Icon", "Axios", "React Router"
-                        ].map((tech, index) => (
-                            <span
-                                key={index}
-                                className={`px-4 py-2 bg-gray-700 text-gray-300 rounded-lg hover:bg-gray-600 hover:text-white transition-all duration-300 transform hover:scale-105 animate-fade-in-up`}
-                                style={{ animationDelay: `${1200 + index * 50}ms` }}
-                            >
-                                {tech}
-                            </span>
-                        ))}
+                        <div className="flex flex-wrap gap-3">
+                            {category.skills.map((skill, j) => (
+                                <span 
+                                    key={j} 
+                                    className="px-4 py-2 bg-[var(--bg)] border border-[var(--text-secondary)]/10 text-[var(--text-secondary)] text-sm rounded-xl hover:border-[var(--accent)]/50 hover:text-[var(--accent)] transition-all duration-300 hover:scale-105 cursor-default shadow-sm"
+                                >
+                                    {skill}
+                                </span>
+                            ))}
+                        </div>
                     </div>
-                </div>
+                ))}
+            </div>
+
+            <div className="pt-12 text-center">
+                <p className="text-[var(--text-secondary)] font-light">Always learning, always evolving. Current focus: <span className="text-[var(--accent)] font-bold">LLM Orchestration</span>.</p>
             </div>
         </section>
     );

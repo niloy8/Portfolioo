@@ -1,197 +1,93 @@
-import type { FC } from 'react';
-import { useState, useEffect } from 'react';
-import { FaPhoneAlt } from 'react-icons/fa';
-import { FaLocationDot } from 'react-icons/fa6';
-import { MdOutlineEmail } from 'react-icons/md';
-import { CiLinkedin } from 'react-icons/ci';
-import { FaFacebookF, FaGithub } from 'react-icons/fa';
+import React from 'react';
+import { Send, Mail, MapPin, Phone, Github, Linkedin, Twitter } from 'lucide-react';
 
-const Contact: FC = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-    });
-
-    useEffect(() => {
-        // Scroll to top on page load
-        window.scrollTo(0, 0);
-    }, []);
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        // Handle form submission here
-        console.log('Form submitted:', formData);
-        // Reset form
-        setFormData({ name: '', email: '', subject: '', message: '' });
-    };
-
+const Contact: React.FC = () => {
     return (
-        <section id="contact" className="py-20 bg-gray-900">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Header Section */}
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 animate-fade-in-up">
-                        Get In <span className="text-blue-400">Touch</span>
-                    </h2>
-                    <div className="w-24 h-1 bg-blue-400 mx-auto mb-6 animate-fade-in-up animation-delay-200"></div>
-                    <p className="text-gray-400 text-lg max-w-2xl mx-auto animate-fade-in-up animation-delay-300">
-                        I'm always open to discussing new opportunities and interesting projects
+        <section className="animate-fade-in py-12 space-y-16">
+            <div className="space-y-4">
+                <h2 className="text-[var(--accent)] font-sans text-sm tracking-[0.2em] uppercase font-bold">Contact</h2>
+                <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Let's Build <span className="italic font-serif">Something Great</span></h1>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div className="space-y-12">
+                    <p className="text-xl text-[var(--text-secondary)] font-light leading-relaxed max-w-lg">
+                        Have a project in mind or just want to chat? Shoot me a message and I'll get back to you within 24 hours.
                     </p>
-                </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    {/* Contact Info */}
-                    <div className="space-y-8 animate-fade-in-up animation-delay-400">
-                        <h3 className="text-2xl font-bold text-white mb-6">Let's talk about everything!</h3>
-                        <p className="text-gray-400 text-lg leading-relaxed">
-                            Don't hesitate to get in touch with me. I'm always open to discussing new
-                            projects, creative ideas, or opportunities to be part of your visions.
-                        </p>
-
-                        <div className="space-y-6">
-                            <div className="flex items-center space-x-4 animate-fade-in-up animation-delay-600">
-                                <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
-                                    <span className="text-blue-400 text-xl"><MdOutlineEmail /></span>
+                    <div className="space-y-8">
+                        {[
+                            { icon: Mail, label: "Email", value: "hello@niloy.dev" },
+                            { icon: MapPin, label: "Location", value: "Dhaka, Bangladesh" },
+                            { icon: Phone, label: "Availability", value: "Open for freelance & full-time" }
+                        ].map((info, i) => (
+                            <div key={i} className="flex items-center gap-6 group">
+                                <div className="w-12 h-12 bg-[var(--accent)]/10 text-[var(--accent)] rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                    <info.icon size={20} />
                                 </div>
                                 <div>
-                                    <h4 className="text-white font-semibold">Email</h4>
-                                    <p className="text-gray-400">niloybhuiyan522@gmail.com</p>
+                                    <p className="text-xs uppercase tracking-widest text-[var(--text-secondary)] font-bold">{info.label}</p>
+                                    <p className="text-lg font-medium">{info.value}</p>
                                 </div>
                             </div>
-
-                            <div className="flex items-center space-x-4 animate-fade-in-up animation-delay-600">
-                                <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
-                                    <span className="text-blue-400 text-xl"><FaPhoneAlt /></span>
-                                </div>
-                                <div>
-                                    <h4 className="text-white font-semibold">Phone</h4>
-                                    <p className="text-gray-400">+880 1743354707</p>
-                                </div>
-                            </div>
-
-                            <div className="flex items-center space-x-4 animate-fade-in-up animation-delay-600">
-                                <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
-                                    <span className="text-blue-400 text-xl"><FaLocationDot /></span>
-                                </div>
-                                <div>
-                                    <h4 className="text-white font-semibold">Location</h4>
-                                    <p className="text-gray-400">Dhaka, Bangladesh</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Social Links */}
-                        <div className="pt-6 animate-fade-in-up animation-delay-800">
-                            <h4 className="text-white font-semibold mb-4">Follow Me</h4>
-                            <div className="flex space-x-4">
-                                {[
-                                    { name: 'LinkedIn', icon: <CiLinkedin />, url: 'https://www.linkedin.com/in/niloy-bhuiyan/' },
-                                    { name: 'Github', icon: <FaGithub />, url: 'https://github.com/niloy8' },
-                                    { name: 'Facebook', icon: <FaFacebookF />, url: 'https://www.facebook.com/mdniloy124/' },
-                                    { name: 'Email', icon: <MdOutlineEmail />, url: 'mailto:niloybhuiyan522@gmail.com' }
-                                ].map((social) => (
-                                    <a
-                                        key={social.name}
-                                        href={social.url}
-                                        target={social.name === 'Email' ? '_self' : '_blank'}
-                                        rel={social.name !== 'Email' ? 'noopener noreferrer' : undefined}
-                                        className="w-10 h-10 bg-gray-800 hover:bg-blue-600 text-gray-400 hover:text-white rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110"
-                                        title={social.name}
-                                    >
-                                        <span className="text-lg">{social.icon}</span>
-                                    </a>
-                                ))}
-                            </div>
-                        </div>
+                        ))}
                     </div>
 
-                    {/* Contact Form */}
-                    <div className="bg-gray-800 rounded-xl p-8 animate-fade-in-up animation-delay-400">
-                        <form onSubmit={handleSubmit} className="space-y-6">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div className="animate-fade-in-up animation-delay-600">
-                                    <label htmlFor="name" className="block text-gray-300 font-medium mb-2">
-                                        Name *
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        name="name"
-                                        value={formData.name}
-                                        onChange={handleChange}
-                                        required
-                                        className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-all duration-300"
-                                        placeholder="Your Name"
-                                    />
-                                </div>
-
-                                <div className="animate-fade-in-up animation-delay-600">
-                                    <label htmlFor="email" className="block text-gray-300 font-medium mb-2">
-                                        Email *
-                                    </label>
-                                    <input
-                                        type="email"
-                                        id="email"
-                                        name="email"
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                        required
-                                        className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-all duration-300"
-                                        placeholder="your.email@example.com"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="animate-fade-in-up animation-delay-800">
-                                <label htmlFor="subject" className="block text-gray-300 font-medium mb-2">
-                                    Subject *
-                                </label>
-                                <input
-                                    type="text"
-                                    id="subject"
-                                    name="subject"
-                                    value={formData.subject}
-                                    onChange={handleChange}
-                                    required
-                                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-all duration-300"
-                                    placeholder="Subject"
-                                />
-                            </div>
-
-                            <div className="animate-fade-in-up animation-delay-800">
-                                <label htmlFor="message" className="block text-gray-300 font-medium mb-2">
-                                    Message *
-                                </label>
-                                <textarea
-                                    id="message"
-                                    name="message"
-                                    value={formData.message}
-                                    onChange={handleChange}
-                                    required
-                                    rows={6}
-                                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 resize-none transition-all duration-300"
-                                    placeholder="Your message..."
-                                ></textarea>
-                            </div>
-
-                            <button
-                                type="submit"
-                                className="w-full px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 animate-fade-in-up animation-delay-1000"
-                            >
-                                Send Message
-                            </button>
-                        </form>
+                    <div className="pt-8 space-y-4">
+                        <p className="text-sm uppercase tracking-widest text-[var(--text-secondary)] font-bold">Follow Me</p>
+                        <div className="flex gap-6">
+                            {[Github, Linkedin, Twitter].map((Icon, i) => (
+                                <a key={i} href="#" className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-all duration-300 transform hover:scale-110">
+                                    <Icon size={24} />
+                                </a>
+                            ))}
+                        </div>
                     </div>
                 </div>
+
+                <form className="bg-[var(--text-secondary)]/5 border border-[var(--text-secondary)]/10 rounded-[2.5rem] p-10 space-y-6 shadow-2xl">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="space-y-2">
+                            <label className="text-xs uppercase tracking-widest font-bold ml-1">Full Name</label>
+                            <input 
+                                type="text" 
+                                placeholder="John Doe"
+                                className="w-full bg-[var(--bg)] border border-[var(--text-secondary)]/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-[var(--accent)] transition-colors shadow-sm"
+                            />
+                        </div>
+                        <div className="space-y-2">
+                            <label className="text-xs uppercase tracking-widest font-bold ml-1">Email Address</label>
+                            <input 
+                                type="email" 
+                                placeholder="john@example.com"
+                                className="w-full bg-[var(--bg)] border border-[var(--text-secondary)]/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-[var(--accent)] transition-colors shadow-sm"
+                            />
+                        </div>
+                    </div>
+                    
+                    <div className="space-y-2">
+                        <label className="text-xs uppercase tracking-widest font-bold ml-1">Subject</label>
+                        <input 
+                            type="text" 
+                            placeholder="Project Inquiry"
+                            className="w-full bg-[var(--bg)] border border-[var(--text-secondary)]/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-[var(--accent)] transition-colors shadow-sm"
+                        />
+                    </div>
+
+                    <div className="space-y-2">
+                        <label className="text-xs uppercase tracking-widest font-bold ml-1">Your Message</label>
+                        <textarea 
+                            rows={5}
+                            placeholder="Tell me about your project..."
+                            className="w-full bg-[var(--bg)] border border-[var(--text-secondary)]/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-[var(--accent)] transition-colors shadow-sm resize-none"
+                        ></textarea>
+                    </div>
+
+                    <button className="w-full bg-[var(--accent)] text-[var(--bg)] font-bold py-5 rounded-2xl flex items-center justify-center gap-3 hover:scale-[1.01] transition-transform shadow-xl shadow-[var(--accent)]/10">
+                        Send Message
+                        <Send size={18} />
+                    </button>
+                </form>
             </div>
         </section>
     );

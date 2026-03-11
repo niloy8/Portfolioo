@@ -1,154 +1,98 @@
-import type { FC } from 'react';
-import { useState, useEffect } from 'react';
-import image1 from '../assets/img2.png'
+import React from 'react';
+import { ArrowUpRight, Github, Linkedin, Twitter } from 'lucide-react';
 import { Link } from 'react-router';
 
-const roles = [
-    'Full Stack Developer',
-    'Frontend Developer',
-    'React Developer',
-];
-const Home: FC = () => {
-    const [displayText, setDisplayText] = useState('');
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [isDeleting, setIsDeleting] = useState(false);
-
-    // Typewriter effect
-    useEffect(() => {
-        const currentRole = roles[currentIndex];
-        const timer = setTimeout(() => {
-            if (!isDeleting) {
-                if (displayText.length < currentRole.length) {
-                    setDisplayText(currentRole.slice(0, displayText.length + 1));
-                } else {
-                    setTimeout(() => setIsDeleting(true), 2000);
-                }
-            } else {
-                if (displayText.length > 0) {
-                    setDisplayText(displayText.slice(0, -1));
-                } else {
-                    setIsDeleting(false);
-                    setCurrentIndex((prevIndex) => (prevIndex + 1) % roles.length);
-                }
-            }
-        }, isDeleting ? 50 : 150);
-
-        return () => clearTimeout(timer);
-    }, [isDeleting, displayText, currentIndex]);
-
-    const scrollToSection = (sectionId: string) => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-            const navbarHeight = 80;
-            const offsetTop = element.offsetTop - navbarHeight;
-
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
-    };
-
+const Home: React.FC = () => {
     return (
-        <section id="home" className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center relative overflow-hidden pt-20">
-            {/* Background decorative elements */}
-            <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
-                <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
-                <div className="absolute top-1/2 left-1/2 w-60 h-60 bg-cyan-500/5 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+        <section className="animate-fade-in py-16">
+            <div className="flex flex-col md:flex-row items-center md:items-start md:justify-between gap-12">
+                <div className="flex-1 space-y-10">
+                    <div className="space-y-4">
+                        <h2 className="text-[var(--text-secondary)] font-sans text-sm tracking-[0.2em] uppercase font-bold">
+                            Software Engineer & Product Designer
+                        </h2>
+                        <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight">
+                            Niloy <span className="italic font-serif text-[var(--accent)]">Bhuiyan</span>
+                        </h1>
+                    </div>
+
+                    <p className="text-xl md:text-2xl text-[var(--text-secondary)] leading-relaxed max-w-2xl font-light">
+                        Building premium digital experiences through minimal design and clean code. 
+                        Currently obsessed with <span className="text-[var(--text-primary)] font-medium">Agentic AI</span> and <span className="text-[var(--text-primary)] font-medium">Modern Web Architectures</span>.
+                    </p>
+
+                    <div className="flex flex-wrap items-center gap-8">
+                        <Link 
+                            to="/projects" 
+                            className="group flex items-center gap-3 bg-[var(--accent)] text-[var(--bg)] px-8 py-4 rounded-full font-bold hover:scale-[1.02] transition-all duration-300 shadow-xl shadow-[var(--accent)]/10"
+                        >
+                            Explore Work
+                            <ArrowUpRight className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                        </Link>
+                        
+                        <div className="flex items-center gap-6">
+                            {[
+                                { icon: Github, href: "https://github.com" },
+                                { icon: Linkedin, href: "https://linkedin.com" },
+                                { icon: Twitter, href: "https://twitter.com" }
+                            ].map((social, i) => (
+                                <a 
+                                    key={i} 
+                                    href={social.href} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-all duration-300 transform hover:scale-110"
+                                >
+                                    <social.icon size={26} />
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="relative group">
+                    <div className="absolute -inset-1 bg-gradient-to-tr from-[var(--accent)] to-transparent rounded-[2.5rem] blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+                    <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-[2.5rem] overflow-hidden bg-[var(--text-secondary)]/10 border border-[var(--text-secondary)]/20 shadow-2xl">
+                        {/* Demo data for profile image */}
+                        <div className="w-full h-full flex items-center justify-center text-[var(--accent)]">
+                           <User size={120} strokeWidth={1} />
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    {/* Left side - Text content */}
-                    <div className="text-left">
-                        <div className="space-y-6">
-                            {/* Greeting */}
-                            <div className="animate-fade-in-up ">
-                                <p className="text-blue-400 text-lg md:text-xl font-medium lg:text-3xl mt-3.5 mb-2">
-                                    Hello, I'm
-                                </p>
-                                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white  leading-tight ">
-                                    Niloy{' '}
-                                    <span className=" text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-                                        Bhuiyan
-                                    </span>
-                                </h1>
-                            </div>
-
-                            {/* Dynamic role with typewriter effect */}
-                            <div className="animate-fade-in-up animation-delay-200">
-                                <div className="flex items-center space-x-2">
-                                    <span className="text-xl md:text-2xl text-gray-300">I'm a</span>
-                                    <span className="text-xl md:text-2xl font-semibold text-blue-400 min-w-[200px]">
-                                        {displayText}
-                                        <span className="animate-pulse">|</span>
-                                    </span>
-                                </div>
-                            </div>
-
-                            {/* Description */}
-                            <div className="animate-fade-in-up animation-delay-400">
-                                <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-2xl">
-                                    Passionate about creating beautiful, functional, and user-friendly applications.
-                                    I love turning complex problems into simple, elegant solutions.
-                                </p>
-                            </div>
-
-                            {/* Link Button */}
-                            <div className="animate-fade-in-up animation-delay-600">
-                                <div className="flex flex-col sm:flex-row gap-4 pt-6">
-                                    <Link to="/projects"
-
-                                        className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
-                                    >
-                                        View My Work
-                                    </Link>
-                                    <Link to="/contact"
-                                        onClick={() => scrollToSection('contact')}
-                                        className="px-8 py-4 border-2 border-gray-600 hover:border-blue-400 text-gray-300 hover:text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
-                                    >
-                                        Get In Touch
-                                    </Link>
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-
-                    {/* Right side - Image/Visual */}
-                    <div className="flex justify-center lg:justify-end">
-                        <div className="animate-fade-in-up animation-delay-300">
-                            <div className="relative">
-                                {/* Profile image placeholder */}
-                                <div className="w-80  h-80 md:w-96 md:h-96 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-gray-700/50 ">
-                                    <div className="w-64 h-64 md:w-80 md:h-80 bg-gray-800 rounded-full flex items-center justify-center relative">
-                                        <span className="text-6xl md:text-7xl"><img src={image1} className='w-2xl h-2xl rounded-b-full absolute bottom-0 left-0 ' alt="" /></span>
-                                    </div>
-                                </div>
-
-                                {/* Floating elements */}
-                                <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-500 rounded-full animate-bounce"></div>
-                                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-cyan-400 rounded-full animate-bounce animation-delay-1000"></div>
-                                <div className="absolute top-1/2 -left-8 w-4 h-4 bg-purple-500 rounded-full animate-pulse"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Scroll indicator */}
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-                    <div className="flex flex-col items-center space-y-2">
-                        <span className="text-gray-400 text-sm">Scroll Down</span>
-                        <div className="w-6 h-10 border-2 border-gray-600 rounded-full flex justify-center">
-                            <div className="w-1 h-3 bg-blue-400 rounded-full mt-2 animate-pulse"></div>
-                        </div>
-                    </div>
-                </div>
+            <div className="mt-32 pt-16 border-t border-[var(--text-secondary)]/10 grid grid-cols-2 md:grid-cols-4 gap-8">
+                {[
+                  { label: "Experience", value: "3+ Years" },
+                  { label: "Projects", value: "15+ Completed" },
+                  { label: "Focus", value: "Full-Stack" },
+                  { label: "Location", value: "Global Remote" }
+                ].map((stat, i) => (
+                  <div key={i} className="space-y-1">
+                    <p className="text-xs uppercase tracking-widest text-[var(--text-secondary)] font-bold">{stat.label}</p>
+                    <p className="text-xl font-serif text-[var(--text-primary)] font-bold">{stat.value}</p>
+                  </div>
+                ))}
             </div>
         </section>
     );
 };
+
+// Help helper for visual placeholder if icon fails or to avoid extra imports for now
+const User = ({ size, strokeWidth }: { size: number, strokeWidth: number }) => (
+    <svg 
+        width={size} 
+        height={size} 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        stroke="currentColor" 
+        strokeWidth={strokeWidth} 
+        strokeLinecap="round" 
+        strokeLinejoin="round"
+    >
+        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+        <circle cx="12" cy="7" r="4" />
+    </svg>
+);
 
 export default Home;
