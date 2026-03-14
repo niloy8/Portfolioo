@@ -18,12 +18,21 @@ const Sidebar: React.FC = () => {
     <aside className="fixed left-0 top-0 h-screen w-24 md:w-32 bg-[var(--bg)] border-r border-[var(--text-secondary)]/10 flex flex-col justify-between py-8 md:py-10 px-2 z-50 transition-all duration-300">
       <div className="flex flex-col items-center w-full">
         {/* Brand Logo */}
-        <div className="mb-6 md:mb-6 pt-2 self-start ml-2 md:ml-4">
+        <div className="mb-6 md:mb-6 flex gap-3 self-start ml-2 md:ml-2">
           <NavLink to="/" className="block group transition-transform hover:scale-105" aria-label="Home">
             <div className="w-8 h-8 md:w-10 md:h-10 rounded-full overflow-hidden border border-[var(--text-secondary)]/20 flex items-center justify-center bg-[#0a0a0a] shadow-sm">
               <img src="/favicon.png" alt="NB Logo" className="w-full h-full object-contain p-1 opacity-90 group-hover:opacity-100 transition-opacity" />
             </div>
           </NavLink>
+          <div className="flex flex-col items-center pb-6">
+            <button
+              onClick={toggleTheme}
+              className="p-3 rounded-full text-[var(--text-secondary)] hover:text-[var(--accent)] hover:bg-[var(--accent)]/5 transition-all duration-300 cursor-pointer"
+              aria-label="Toggle theme"
+            >
+              {theme === 'light' ? <Moon size={18} strokeWidth={1.5} /> : <Sun size={18} strokeWidth={1.5} />}
+            </button>
+          </div>
         </div>
 
         {/* Navigation Items */}
@@ -46,15 +55,7 @@ const Sidebar: React.FC = () => {
         </nav>
       </div>
 
-      <div className="flex flex-col items-center pb-6">
-        <button
-          onClick={toggleTheme}
-          className="p-3 rounded-full text-[var(--text-secondary)] hover:text-[var(--accent)] hover:bg-[var(--accent)]/5 transition-all duration-300 cursor-pointer"
-          aria-label="Toggle theme"
-        >
-          {theme === 'light' ? <Moon size={18} strokeWidth={1.5} /> : <Sun size={18} strokeWidth={1.5} />}
-        </button>
-      </div>
+
     </aside>
   );
 };
