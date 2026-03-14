@@ -29,7 +29,7 @@ const projects = [
 
 const Projects: React.FC = () => {
     return (
-        <section className="animate-fade-in pt-10 md:pt-20 max-w-2xl">
+        <section className="animate-fade-in max-w-2xl">
             <h1 className="text-3xl md:text-4xl font-serif font-bold tracking-tight text-[var(--text-primary)] mb-12">Projects</h1>
 
             <div className="space-y-12">

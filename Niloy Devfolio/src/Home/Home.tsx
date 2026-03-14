@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home: React.FC = () => {
     return (
-        <section className="animate-fade-in flex flex-col md:flex-row items-center md:items-start md:justify-start gap-10 md:gap-16 pt-10 md:pt-20">
+        <section className="animate-fade-in flex flex-col md:flex-row items-center md:items-start md:justify-start gap-10 md:gap-16">
             {/* Image Container */}
             <div className="w-48 h-48 md:w-56 md:h-56 shrink-0 rounded-[2rem] overflow-hidden bg-[#e5e0d8] border border-[var(--text-secondary)]/10 shadow-sm flex items-center justify-center text-[var(--text-secondary)]">
                 <UserPlaceholder />

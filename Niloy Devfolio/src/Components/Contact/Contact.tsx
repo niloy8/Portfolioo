@@ -3,7 +3,7 @@ import { Mail } from 'lucide-react';
 
 const Contact: React.FC = () => {
     return (
-        <section className="animate-fade-in pt-10 md:pt-20 max-w-2xl">
+        <section className="animate-fade-in max-w-2xl">
             <h1 className="text-3xl md:text-4xl font-serif font-bold tracking-tight text-[var(--text-primary)] mb-6">Get in Touch</h1>
             
             <p className="text-base md:text-lg text-[var(--text-secondary)] font-serif leading-relaxed mb-10">

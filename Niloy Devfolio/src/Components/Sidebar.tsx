@@ -15,7 +15,7 @@ const Sidebar: React.FC = () => {
   ];
 
   return (
-    <aside className="fixed right-0 top-0 h-screen w-24 md:w-32 bg-[var(--bg)] border-l border-[var(--text-secondary)]/10 flex flex-col justify-between py-12 px-2 z-50 transition-all duration-300">
+    <aside className="fixed left-0 top-0 h-screen w-24 md:w-32 bg-[var(--bg)] border-r border-[var(--text-secondary)]/10 flex flex-col justify-between py-12 px-2 z-50 transition-all duration-300">
       <div className="flex justify-center flex-1 w-full mt-8">
         <nav className="flex flex-col items-center justify-center gap-10 w-full">
           {navItems.map((item) => (
