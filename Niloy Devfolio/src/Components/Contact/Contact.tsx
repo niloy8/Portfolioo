@@ -17,7 +17,9 @@ const Contact: React.FC = () => {
                 </p>
 
                 <a
-                    href="mailto:hello@niloy.dev"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=niloybhuiyan522@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group inline-flex items-center justify-center gap-2 bg-[var(--text-primary)] text-[var(--bg)] px-6 py-3 rounded-xl hover:bg-[var(--accent)] hover:-translate-y-0.5 transition-all shadow-md font-sans font-semibold text-sm w-full sm:w-auto"
                 >
                     <Send size={14} strokeWidth={2} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

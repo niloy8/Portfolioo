@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebook, FaFile, FaGithub, FaLinkedin } from 'react-icons/fa6';
+import { FaFile, FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
 import { Mail } from 'lucide-react';
 import niloyImage from '../assets/Niloy.png';
 
@@ -23,16 +23,16 @@ const Home: React.FC = () => {
                 </p>
 
                 <div className="pt-4 flex flex-wrap gap-5 text-xs font-sans text-[var(--text-secondary)] tracking-wide">
-                    <a href="#" className="flex items-center gap-1.5 hover:text-[var(--text-primary)] transition-colors group">
-                        <FaFacebook size={12} className="group-hover:-translate-y-0.5 transition-transform" /> <span>Facebook</span>
+                    <a href="https://x.com/Niloy__Bh" target='_blank' className="flex items-center gap-1.5 hover:text-[var(--text-primary)] transition-colors group">
+                        <FaXTwitter size={12} className="group-hover:-translate-y-0.5 transition-transform" /> <span>Twitter</span>
                     </a>
-                    <a href="#" className="flex items-center gap-1.5 hover:text-[var(--text-primary)] transition-colors group">
+                    <a href="https://github.com/niloy88" target='_blank' className="flex items-center gap-1.5 hover:text-[var(--text-primary)] transition-colors group">
                         <FaGithub size={12} className="group-hover:-translate-y-0.5 transition-transform" /> <span>GitHub</span>
                     </a>
-                    <a href="#" className="flex items-center gap-1.5 hover:text-[var(--text-primary)] transition-colors group">
+                    <a href="https://www.linkedin.com/in/niloy8/" target='_blank' className="flex items-center gap-1.5 hover:text-[var(--text-primary)] transition-colors group">
                         <FaLinkedin size={12} className="group-hover:-translate-y-0.5 transition-transform" /> <span>LinkedIn</span>
                     </a>
-                    <a href="#" className="flex items-center gap-1.5 hover:text-[var(--text-primary)] transition-colors group">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=niloybhuiyan522@gmail.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-[var(--text-primary)] transition-colors group">
                         <Mail size={12} className="group-hover:-translate-y-0.5 transition-transform" /> <span>Email</span>
                     </a>
                     <a href="#" className="flex items-center gap-1.5 hover:text-[var(--text-primary)] transition-colors group">
