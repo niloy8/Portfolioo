@@ -73,24 +73,30 @@ const ProjectDetail: React.FC = () => {
                         {project.description}
                     </p>
 
-                    <div className="flex flex-wrap items-center gap-8 pt-8 border-t border-[var(--text-secondary)]/10">
-                        <a
-                            href={project.demo}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2 text-sm font-sans text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group"
-                        >
-                            Live Site <ExternalLink size={14} className="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
-                        </a>
-                        <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2 text-sm font-sans text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group"
-                        >
-                            Source Code <FaGithub size={14} className="group-hover:-translate-y-0.5 transition-transform" />
-                        </a>
-                    </div>
+                    {(project.demo || project.github) && (
+                        <div className="flex flex-wrap items-center gap-8 pt-8 border-t border-[var(--text-secondary)]/10">
+                            {project.demo && project.demo !== '#' && (
+                                <a
+                                    href={project.demo}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 text-sm font-sans text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group"
+                                >
+                                    Live Site <ExternalLink size={14} className="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
+                                </a>
+                            )}
+                            {project.github && project.github !== '#' && (
+                                <a
+                                    href={project.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 text-sm font-sans text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group"
+                                >
+                                    Source Code <FaGithub size={14} className="group-hover:-translate-y-0.5 transition-transform" />
+                                </a>
+                            )}
+                        </div>
+                    )}
                 </div>
             </div>
         </section>

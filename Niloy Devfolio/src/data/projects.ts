@@ -6,8 +6,8 @@ export interface Project {
     year: string;
     status: string;
     tags: string[];
-    github: string;
-    demo: string;
+    github?: string;
+    demo?: string;
 }
 
 export const projects: Project[] = [
