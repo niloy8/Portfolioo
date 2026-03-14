@@ -1,6 +1,7 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
+import { FaFacebook, FaFile, FaGithub, FaLinkedin } from 'react-icons/fa6';
 import { Mail } from 'lucide-react';
+import niloyImage from '../assets/Niloy.png';
 
 const Home: React.FC = () => {
     return (
@@ -13,17 +14,17 @@ const Home: React.FC = () => {
                         Niloy Bhuiyan<span className="text-[var(--accent)]">.</span>
                     </h1>
                     <h2 className="text-sm md:text-base font-serif text-[var(--text-secondary)] italic">
-                        Software Engineer & Product Designer
+                        CSE Graduate & Software Engineer
                     </h2>
                 </div>
 
                 <p className="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed font-sans font-light">
-                    Full-stack developer specializing in modern web architectures and Agentic AI. I build scalable web applications and solve complex engineering problems with clean code.
+                    Full-stack developer specializing in modern web architectures and Agentic AI to build modern and scalable web applications. I build scalable and high-performance web applications using technologies like React, Next.js, Node.js, PostGreSQL, MongoDB, and Tailwind CSS.  Also worked with WordPress and many other technologies. I solve complex engineering problems with clean code.
                 </p>
 
                 <div className="pt-4 flex flex-wrap gap-5 text-xs font-sans text-[var(--text-secondary)] tracking-wide">
                     <a href="#" className="flex items-center gap-1.5 hover:text-[var(--text-primary)] transition-colors group">
-                        <FaXTwitter size={12} className="group-hover:-translate-y-0.5 transition-transform" /> <span>Twitter</span>
+                        <FaFacebook size={12} className="group-hover:-translate-y-0.5 transition-transform" /> <span>Facebook</span>
                     </a>
                     <a href="#" className="flex items-center gap-1.5 hover:text-[var(--text-primary)] transition-colors group">
                         <FaGithub size={12} className="group-hover:-translate-y-0.5 transition-transform" /> <span>GitHub</span>
@@ -34,6 +35,9 @@ const Home: React.FC = () => {
                     <a href="#" className="flex items-center gap-1.5 hover:text-[var(--text-primary)] transition-colors group">
                         <Mail size={12} className="group-hover:-translate-y-0.5 transition-transform" /> <span>Email</span>
                     </a>
+                    <a href="#" className="flex items-center gap-1.5 hover:text-[var(--text-primary)] transition-colors group">
+                        <FaFile size={12} className="group-hover:-translate-y-0.5 transition-transform" /> <span>Resume</span>
+                    </a>
                 </div>
             </div>
 
@@ -41,29 +45,11 @@ const Home: React.FC = () => {
             <div className="relative shrink-0">
                 <div className="absolute inset-0 translate-x-3 translate-y-3 rounded-2xl border border-[var(--text-secondary)]/20"></div>
                 <div className="w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 relative rounded-2xl overflow-hidden bg-[#e5e0d8] border border-[var(--bg)] z-10 flex items-center justify-center text-[var(--text-secondary)]">
-                    <UserPlaceholder />
+                    <img src={niloyImage} alt="Niloy Bhuiyan" className="w-full h-full object-cover object-top" />
                 </div>
             </div>
         </section>
     );
 };
-
-// Help helper for visual placeholder if icon fails or to avoid extra imports for now
-const UserPlaceholder = () => (
-    <svg
-        width="80"
-        height="80"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="opacity-50"
-    >
-        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-        <circle cx="12" cy="7" r="4" />
-    </svg>
-);
 
 export default Home;
