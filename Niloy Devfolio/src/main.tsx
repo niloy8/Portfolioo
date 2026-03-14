@@ -12,6 +12,7 @@ import Home from './Home/Home.tsx';
 import Experience from './Components/Experience/Experience.tsx';
 import Contact from './Components/Contact/Contact.tsx';
 import Projects from './Components/Projects/Project.tsx';
+import ProjectDetail from './Components/Projects/ProjectDetail.tsx';
 import Qualifications from './Components/Qualifications/Qualifications.tsx';
 
 const router = createBrowserRouter([
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/projects",
         element: <Projects />
+      },
+      {
+        path: "/projects/:id",
+        element: <ProjectDetail />
       },
       {
         path: "/qualifications",
