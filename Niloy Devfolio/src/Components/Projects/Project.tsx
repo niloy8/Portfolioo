@@ -1,4 +1,5 @@
 import React from 'react';
+import { Sparkles, ArrowUpRight } from 'lucide-react';
 
 const projects = [
   {
@@ -29,24 +30,32 @@ const projects = [
 
 const Projects: React.FC = () => {
     return (
-        <section className="animate-fade-in max-w-2xl">
-            <h1 className="text-3xl md:text-4xl font-serif font-bold tracking-tight text-[var(--text-primary)] mb-12">Projects</h1>
+        <section className="animate-fade-in max-w-3xl pt-8">
+            <div className="flex items-center gap-4 mb-14">
+                <div className="p-3 bg-[var(--accent)]/10 text-[var(--accent)] rounded-2xl">
+                    <Sparkles size={28} strokeWidth={1.5} />
+                </div>
+                <h1 className="text-4xl md:text-5xl font-sans font-extrabold text-[var(--text-primary)] tracking-tight">Projects</h1>
+            </div>
 
-            <div className="space-y-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {projects.map((project, i) => (
-                    <div key={i} className="flex flex-col md:flex-row gap-2 md:gap-8 group">
-                        <div className="w-20 shrink-0 text-sm font-serif text-[var(--text-secondary)] mt-1">
-                            {project.year}
+                    <a key={i} href={project.link} className="block group">
+                        <div className="h-full p-8 rounded-3xl bg-[var(--text-secondary)]/5 border border-[var(--text-secondary)]/10 group-hover:bg-[var(--text-secondary)]/10 transition-all duration-300 flex flex-col justify-between space-y-8">
+                            <div>
+                                <div className="flex justify-between items-start mb-4">
+                                    <span className="text-xs font-sans font-bold text-[var(--accent)] tracking-widest uppercase">{project.year}</span>
+                                    <ArrowUpRight size={20} className="text-[var(--text-secondary)] group-hover:text-[var(--accent)] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                                </div>
+                                <h3 className="text-2xl font-sans font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors mb-3">
+                                    {project.title}
+                               </h3>
+                                <p className="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed font-sans font-light">
+                                    {project.description}
+                                </p>
+                            </div>
                         </div>
-                        <div>
-                            <a href={project.link} className="inline-block text-xl font-serif font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors underline-offset-4 hover:underline mb-2">
-                                {project.title}
-                            </a>
-                            <p className="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed font-serif">
-                                {project.description}
-                            </p>
-                        </div>
-                    </div>
+                    </a>
                 ))}
             </div>
         </section>
