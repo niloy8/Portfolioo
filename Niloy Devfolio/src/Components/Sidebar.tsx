@@ -15,9 +15,19 @@ const Sidebar: React.FC = () => {
   ];
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-24 md:w-32 bg-[var(--bg)] border-r border-[var(--text-secondary)]/10 flex flex-col justify-between py-12 px-2 z-50 transition-all duration-300">
-      <div className="flex justify-center flex-1 w-full mt-8">
-        <nav className="flex flex-col items-center justify-center gap-10 w-full">
+    <aside className="fixed left-0 top-0 h-screen w-24 md:w-32 bg-[var(--bg)] border-r border-[var(--text-secondary)]/10 flex flex-col justify-between py-8 md:py-10 px-2 z-50 transition-all duration-300">
+      <div className="flex flex-col items-center w-full">
+        {/* Brand Logo */}
+        <div className="mb-6 md:mb-6 pt-2 self-start ml-2 md:ml-4">
+          <NavLink to="/" className="block group transition-transform hover:scale-105" aria-label="Home">
+            <div className="w-8 h-8 md:w-10 md:h-10 rounded-full overflow-hidden border border-[var(--text-secondary)]/20 flex items-center justify-center bg-[#0a0a0a] shadow-sm">
+              <img src="/favicon.png" alt="NB Logo" className="w-full h-full object-contain p-1 opacity-90 group-hover:opacity-100 transition-opacity" />
+            </div>
+          </NavLink>
+        </div>
+
+        {/* Navigation Items */}
+        <nav className="flex flex-col items-center justify-center gap-8 md:gap-10 w-full">
           {navItems.map((item) => (
             <NavLink
               key={item.name}
