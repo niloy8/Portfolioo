@@ -6,33 +6,33 @@ const Home: React.FC = () => {
     return (
         <section className="animate-fade-in flex flex-col-reverse lg:flex-row items-start justify-between gap-16 pt-8">
             {/* Content Container */}
-            <div className="flex-1 space-y-10 max-w-2xl">
-                <div className="space-y-4">
-                    <div className="w-12 h-[2px] bg-[var(--accent)] mb-8"></div>
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-sans font-extrabold tracking-tighter text-[var(--text-primary)]">
+            <div className="flex-1 space-y-6 max-w-xl text-left mt-2 md:mt-4">
+                <div className="space-y-2">
+                    <div className="w-8 h-[1px] bg-[var(--text-secondary)] mb-6"></div>
+                    <h1 className="text-3xl md:text-4xl font-serif font-bold tracking-tight text-[var(--text-primary)]">
                         Niloy Bhuiyan<span className="text-[var(--accent)]">.</span>
                     </h1>
-                    <h2 className="text-xl md:text-2xl font-serif text-[var(--text-secondary)] italic">
+                    <h2 className="text-sm md:text-base font-serif text-[var(--text-secondary)] italic">
                         Software Engineer & Product Designer
                     </h2>
                 </div>
 
-                <p className="text-base md:text-lg text-[var(--text-secondary)] leading-loose font-sans font-light">
-                    Full-stack developer specializing in modern web architectures and Agentic AI. I build scalable web applications and solve complex engineering problems with clean, elegant code.
+                <p className="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed font-sans font-light">
+                    Full-stack developer specializing in modern web architectures and Agentic AI. I build scalable web applications and solve complex engineering problems with clean code.
                 </p>
 
-                <div className="pt-4 flex flex-wrap gap-6">
-                    <a href="#" className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--text-secondary)]/20 text-[var(--text-primary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all font-sans text-sm font-medium group">
-                        <FaXTwitter size={16} /> <span className="hidden sm:inline">Twitter</span>
+                <div className="pt-4 flex flex-wrap gap-5 text-xs font-sans text-[var(--text-secondary)] tracking-wide">
+                    <a href="#" className="flex items-center gap-1.5 hover:text-[var(--text-primary)] transition-colors group">
+                        <FaXTwitter size={12} className="group-hover:-translate-y-0.5 transition-transform" /> <span>Twitter</span>
                     </a>
-                    <a href="#" className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--text-secondary)]/20 text-[var(--text-primary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all font-sans text-sm font-medium group">
-                        <FaGithub size={16} /> <span className="hidden sm:inline">GitHub</span>
+                    <a href="#" className="flex items-center gap-1.5 hover:text-[var(--text-primary)] transition-colors group">
+                        <FaGithub size={12} className="group-hover:-translate-y-0.5 transition-transform" /> <span>GitHub</span>
                     </a>
-                    <a href="#" className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--text-secondary)]/20 text-[var(--text-primary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all font-sans text-sm font-medium group">
-                        <FaLinkedin size={16} /> <span className="hidden sm:inline">LinkedIn</span>
+                    <a href="#" className="flex items-center gap-1.5 hover:text-[var(--text-primary)] transition-colors group">
+                        <FaLinkedin size={12} className="group-hover:-translate-y-0.5 transition-transform" /> <span>LinkedIn</span>
                     </a>
-                    <a href="#" className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--text-secondary)]/20 text-[var(--text-primary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all font-sans text-sm font-medium group">
-                        <Mail size={16} /> <span className="hidden sm:inline">Email</span>
+                    <a href="#" className="flex items-center gap-1.5 hover:text-[var(--text-primary)] transition-colors group">
+                        <Mail size={12} className="group-hover:-translate-y-0.5 transition-transform" /> <span>Email</span>
                     </a>
                 </div>
             </div>
