@@ -9,10 +9,10 @@ import {
 } from "react-router";
 import Layout from './Components/Layout/Layout.tsx';
 import Home from './Home/Home.tsx';
-import About from './Components/About/About.tsx';
+import Experience from './Components/Experience/Experience.tsx';
 import Contact from './Components/Contact/Contact.tsx';
 import Projects from './Components/Projects/Project.tsx';
-import Skills from './Components/Skills/Skills.tsx';
+import Qualifications from './Components/Qualifications/Qualifications.tsx';
 
 const router = createBrowserRouter([
   {
@@ -22,21 +22,22 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />
-      }, {
-        path: "/about",
-        element: <About />
-      },
+      }, 
       {
-        path: "/contact",
-        element: <Contact />
+        path: "/experience",
+        element: <Experience />
       },
       {
         path: "/projects",
         element: <Projects />
       },
       {
-        path: "/skills",
-        element: <Skills />
+        path: "/qualifications",
+        element: <Qualifications />
+      },
+      {
+        path: "/contact",
+        element: <Contact />
       }
     ]
   },

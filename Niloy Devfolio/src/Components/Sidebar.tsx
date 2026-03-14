@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router';
-import { Home, User, Briefcase, Mail, Sun, Moon } from 'lucide-react';
-import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
+import { Home, Briefcase, FileText, GraduationCap, Mail, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../ThemeContext';
 
 const Sidebar: React.FC = () => {
@@ -9,74 +8,42 @@ const Sidebar: React.FC = () => {
 
   const navItems = [
     { name: 'Home', path: '/', icon: Home },
-    { name: 'About', path: '/about', icon: User },
     { name: 'Projects', path: '/projects', icon: Briefcase },
+    { name: 'Experience', path: '/experience', icon: FileText },
+    { name: 'Qualifications', path: '/qualifications', icon: GraduationCap },
     { name: 'Contact', path: '/contact', icon: Mail },
   ];
 
-  const socialLinks = [
-    { icon: FaGithub, href: 'https://github.com' },
-    { icon: FaLinkedin, href: 'https://linkedin.com' },
-    { icon: FaXTwitter, href: 'https://twitter.com' },
-  ];
-
   return (
-    <aside className="fixed left-0 top-0 h-screen w-20 md:w-64 bg-[var(--bg)] border-r border-[var(--text-secondary)]/10 flex flex-col justify-between py-8 px-4 z-50 transition-all duration-300">
-      <div>
-        <div className="flex items-center justify-center md:justify-start md:px-4 mb-12">
-          <div className="w-10 h-10">
-            <img className='rounded' src="../public/favicon.png" alt="" />
-          </div>
-
-        </div>
-
-        <nav className="space-y-4">
+    <aside className="fixed right-0 top-0 h-screen w-24 md:w-32 bg-[var(--bg)] border-l border-[var(--text-secondary)]/10 flex flex-col justify-between py-12 px-2 z-50 transition-all duration-300">
+      <div className="flex justify-center flex-1 w-full mt-8">
+        <nav className="flex flex-col items-center justify-center gap-10 w-full">
           {navItems.map((item) => (
             <NavLink
               key={item.name}
               to={item.path}
               className={({ isActive }) =>
-                `flex items-center justify-center md:justify-start md:px-4 py-3 rounded-xl transition-all duration-200 group ${isActive
-                  ? 'bg-[var(--accent)]/10 text-[var(--accent)]'
-                  : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--text-secondary)]/5'
+                `flex flex-col items-center justify-center gap-2 transition-all duration-300 group ${isActive
+                  ? 'text-[var(--accent)] font-medium scale-110'
+                  : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:scale-105'
                 }`
               }
             >
-              <item.icon size={22} />
-              <span className="hidden md:block ml-4 font-medium">{item.name}</span>
+              <item.icon size={18} strokeWidth={1.5} />
+              <span className="text-[10px] md:text-xs font-serif tracking-wide">{item.name}</span>
             </NavLink>
           ))}
         </nav>
       </div>
 
-      <div className="space-y-6">
-        <div className="flex flex-col md:flex-row items-center justify-center md:justify-start md:px-4 gap-4">
-          <button
-            onClick={toggleTheme}
-            className="p-3 rounded-xl bg-[var(--text-secondary)]/5 text-[var(--text-secondary)] hover:text-[var(--accent)] hover:bg-[var(--accent)]/10 transition-all duration-200 cursor-pointer"
-            aria-label="Toggle theme"
-          >
-            {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
-          </button>
-
-          <div className="hidden md:flex items-center gap-3">
-            {socialLinks.map((link, i) => (
-              <a
-                key={i}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors"
-              >
-                <link.icon size={18} />
-              </a>
-            ))}
-          </div>
-        </div>
-
-        <div className="md:px-4 text-[10px] text-[var(--text-secondary)]/50 hidden md:block">
-          © 2025 Niloy Bhuiyan
-        </div>
+      <div className="flex flex-col items-center pb-6">
+        <button
+          onClick={toggleTheme}
+          className="p-3 rounded-full text-[var(--text-secondary)] hover:text-[var(--accent)] hover:bg-[var(--accent)]/5 transition-all duration-300 cursor-pointer"
+          aria-label="Toggle theme"
+        >
+          {theme === 'light' ? <Moon size={18} strokeWidth={1.5} /> : <Sun size={18} strokeWidth={1.5} />}
+        </button>
       </div>
     </aside>
   );
