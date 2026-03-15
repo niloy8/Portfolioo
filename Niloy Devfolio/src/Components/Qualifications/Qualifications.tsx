@@ -5,12 +5,12 @@ import type { Qualification } from '../../data/qualifications';
 
 const QualificationCard: React.FC<{ item: Qualification; index: number }> = ({ item, index }) => (
     <div
-        className="group relative pl-8 pb-10 last:pb-0"
+        className="group relative pl-8 pb-8 last:pb-0"
         style={{ animationDelay: `${index * 100}ms` }}
     >
         {/* Timeline Line */}
         <div className="absolute left-[11px] top-0 bottom-0 w-[1px] bg-[var(--text-secondary)]/10 group-last:h-4 overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-0 bg-[var(--accent)] group-hover:h-full transition-all duration-700 ease-in-out"></div>
+            <div className="absolute top-0 left-0 w-full h-0 bg-[var(--accent)]/30 group-hover:h-full transition-all duration-700 ease-in-out"></div>
         </div>
 
         {/* Timeline Dot */}
@@ -18,13 +18,13 @@ const QualificationCard: React.FC<{ item: Qualification; index: number }> = ({ i
             <div className="w-1.5 h-1.5 rounded-full bg-[var(--text-secondary)]/30 group-hover:bg-[var(--accent)] transition-all transform group-hover:scale-125"></div>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-2">
             <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
                 <div className="space-y-1">
-                    <h3 className="text-lg md:text-xl font-serif font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors duration-300">
+                    <h3 className="text-base md:text-lg font-serif font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors duration-300">
                         {item.title}
                     </h3>
-                    <p className="text-sm font-serif italic text-[var(--text-secondary)] flex items-center gap-2">
+                    <p className="text-xs md:text-sm font-serif italic text-[var(--text-secondary)] flex items-center gap-2">
                         {item.organization}
                         {item.link && (
                             <a
@@ -33,17 +33,19 @@ const QualificationCard: React.FC<{ item: Qualification; index: number }> = ({ i
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center text-[var(--accent)] hover:underline decoration-skip-ink opacity-0 group-hover:opacity-100 transition-opacity"
                             >
-                                <ExternalLink size={12} className="ml-1" />
+                                <ExternalLink size={10} className="ml-1" />
                             </a>
                         )}
                     </p>
                 </div>
-                <span className="text-[10px] md:text-xs font-sans font-medium uppercase tracking-widest text-[var(--accent)] bg-[var(--accent)]/5 border border-[var(--accent)]/10 px-3 py-1 rounded-full whitespace-nowrap self-start">
-                    {item.period}
-                </span>
+                {item.period && (
+                    <span className="text-[9px] md:text-[10px] font-sans font-medium uppercase tracking-widest text-[var(--accent)] bg-[var(--accent)]/5 border border-[var(--accent)]/10 px-2 py-0.5 rounded-full whitespace-nowrap self-start">
+                        {item.period}
+                    </span>
+                )}
             </div>
 
-            <p className="text-sm leading-relaxed text-[var(--text-secondary)] font-sans font-light max-w-2xl opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+            <p className="text-xs md:text-sm leading-relaxed text-[var(--text-secondary)] font-sans font-light max-w-2xl opacity-80 group-hover:opacity-100 transition-opacity duration-300">
                 {item.description}
             </p>
         </div>

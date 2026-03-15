@@ -13,7 +13,7 @@ const Contact: React.FC = () => {
 
             <div className="w-full lg:max-w-4xl bg-[var(--text-secondary)]/5 border border-[var(--text-secondary)]/10 p-6 md:p-8 rounded-2xl">
                 <p className="text-sm text-[var(--text-secondary)] font-sans font-light leading-relaxed mb-8">
-                    I'm currently available for freelance projects and consulting opportunities. Whether you have a question or just want to say hi, feel free to drop a message.
+                    I'm currently available for new job opportunities and freelance projects. Whether you have a question or just want to say hi, feel free to drop a message.
                 </p>
 
                 <a

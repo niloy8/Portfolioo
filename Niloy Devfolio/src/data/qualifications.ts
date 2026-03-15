@@ -1,7 +1,7 @@
 export interface Qualification {
     title: string;
     organization: string;
-    period: string;
+    period?: string;
     description: string;
     link?: string;
 }
@@ -11,7 +11,7 @@ export const education: Qualification[] = [
         title: "B.Sc. in Computer Science and Engineering",
         organization: "Green University of Bangladesh",
         period: "Feb 2022 – Feb 2026",
-        description: "Focusing on Software Engineering, Data Structures, Algorithms, and Artificial Intelligence. Maintaining a strong academic record while actively participating in tech communities."
+        description: "Focusing on Software Engineering, Data Structures, Algorithms, Cyber Security and Artificial Intelligence. Maintaining a strong academic record while actively participating in tech communities."
     }
 ];
 
@@ -26,7 +26,7 @@ export const certifications: Qualification[] = [
     {
         title: "AWS Certified Solutions Architect",
         organization: "Amazon Web Services",
-        period: "2023",
+
         description: "Associate level certification focusing on designing distributed systems on AWS."
     }
 ];
