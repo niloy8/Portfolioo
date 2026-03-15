@@ -18,7 +18,9 @@ const Projects: React.FC = () => {
                     <Link key={project.id} to={`/projects/${project.id}`} className="block h-full group">
                         <div className="h-full p-6 lg:p-8 rounded-2xl bg-[var(--text-secondary)]/5 border border-[var(--text-secondary)]/10 group-hover:bg-[var(--text-secondary)]/10 transition-all duration-300 flex flex-col space-y-6">
                             <div className="flex justify-between items-start mb-3">
-                                <span className="text-[10px] font-sans font-semibold text-[var(--accent)] tracking-widest uppercase">{project.year}</span>
+                                {project.year && (
+                                    <span className="text-[10px] font-sans font-semibold text-[var(--accent)] tracking-widest uppercase">{project.year}</span>
+                                )}
                                 <ArrowUpRight size={16} className="text-[var(--text-secondary)] group-hover:text-[var(--accent)] transition-colors opacity-0 group-hover:opacity-100" />
                             </div>
                             <h3 className="text-lg md:text-xl font-serif font-semibold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors mb-3">

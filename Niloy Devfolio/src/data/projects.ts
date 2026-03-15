@@ -3,7 +3,7 @@ export interface Project {
     title: string;
     shortDescription: string;
     description: string;
-    year: string;
+    year?: string;
     status: string;
     tags: string[];
     github?: string;
@@ -12,15 +12,15 @@ export interface Project {
 
 export const projects: Project[] = [
     {
-        id: "onvyo-erp",
-        title: "Devrachtpatser Onvyo ERP",
-        shortDescription: "A full ERP system developed from scratch with real-time admin dashboards for HR, finance, and lead management. Built for scalability and high performance.",
-        description: "A full ERP system developed from scratch with real time admin dashboards for HR, finance, lead, and customer management. Features scheduling and email reminders, with a CPQ tool that automated lead generation and quotation workflows to boost sales efficiency.",
-        year: "2024",
+        id: "khan-express",
+        title: "Khan Express (KNEX)",
+        shortDescription: "A full e-commerce platform developed from scratch with real-time admin dashboards for HR, finance, and lead management. Built for scalability and high performance.",
+        description: "A full e-commerce platform developed from scratch with real time admin dashboards for HR, finance, lead, and customer management. Features scheduling and email reminders, with a CPQ tool that automated lead generation and quotation workflows to boost sales efficiency.",
+        year: "2026",
         status: "Live",
-        tags: ["ERP", "Dashboard", "CPQ", "Real-time", "Next.js", "Node.js", "Vercel", "React", "Supabase"],
-        github: "#",
-        demo: "#"
+        tags: ["E-commerce", "Admin Panel", "Next.js", "Node.js", "TypeScript", "Tailwind CSS", "Docker", "DigitalOcean", "PostgreSQL", "React", "Vercel", "Render"],
+        github: "https://github.com/Knex-BD-org/knex_bd",
+        demo: "https://knex.com.bd/"
     },
     {
         id: "textgpt-iqr",

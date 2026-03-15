@@ -39,10 +39,12 @@ const ProjectDetail: React.FC = () => {
             <div className="flex flex-col md:flex-row gap-12 md:gap-24">
                 {/* Left Column: Metadata */}
                 <div className="w-full md:w-1/3 shrink-0 flex flex-col gap-8">
-                    <div>
-                        <span className="block text-[10px] font-sans font-bold text-[var(--text-secondary)] tracking-widest uppercase mb-2">Year</span>
-                        <span className="text-sm font-sans font-medium text-[var(--text-primary)]">{project.year}</span>
-                    </div>
+                    {project.year && (
+                        <div>
+                            <span className="block text-[10px] font-sans font-bold text-[var(--text-secondary)] tracking-widest uppercase mb-2">Year</span>
+                            <span className="text-sm font-sans font-medium text-[var(--text-primary)]">{project.year}</span>
+                        </div>
+                    )}
 
                     <div>
                         <span className="block text-[10px] font-sans font-bold text-[var(--text-secondary)] tracking-widest uppercase mb-2">Status</span>
