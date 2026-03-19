@@ -82,7 +82,7 @@ const Qualifications: React.FC = () => {
                         <Award size={22} strokeWidth={1.5} />
                     </div>
                     <div>
-                        <h2 className="text-2xl md:text-3xl font-serif font-bold text-[var(--text-primary)] tracking-tight">Certifications</h2>
+                        <h2 className="text-2xl md:text-3xl font-serif font-bold text-[var(--text-primary)] tracking-tight">Certifications and Other</h2>
                         <div className="h-0.5 w-12 bg-[var(--accent)]/60 rounded-full mt-1"></div>
                     </div>
                 </div>
