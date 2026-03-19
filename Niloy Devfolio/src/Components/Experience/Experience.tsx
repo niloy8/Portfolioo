@@ -22,7 +22,7 @@ const ExperienceSection: React.FC<{ item: ExperienceItem; index: number }> = ({ 
                 {item.period}
             </span>
             {item.location && (
-                <p className="text-[10px] font-serif italic text-[var(--text-secondary)]/80 mt-0.5 uppercase tracking-wider">
+                <p className="text-[10px] font-serif italic text-[var(--text-secondary)] mt-0.5 uppercase tracking-wider">
                     {item.location}
                 </p>
             )}
@@ -40,13 +40,13 @@ const ExperienceSection: React.FC<{ item: ExperienceItem; index: number }> = ({ 
             </div>
 
             <div className="space-y-3 max-w-3xl">
-                <p className="text-xs md:text-sm leading-relaxed text-[var(--text-secondary)]/90 font-sans font-light">
+                <p className="text-xs md:text-sm leading-relaxed text-[var(--text-secondary)] font-sans">
                     {item.description}
                 </p>
                 {item.details && (
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 pt-1.5 border-t border-[var(--text-secondary)]/10">
                         {item.details.map((detail, i) => (
-                            <div key={i} className="animate-slide-up text-[10px] md:text-xs text-[var(--text-secondary)]/80 font-sans font-light flex gap-3 leading-relaxed" style={{ animationDelay: `${(index * 150) + (i * 50)}ms` }}>
+                            <div key={i} className="animate-slide-up text-[10px] md:text-xs text-[var(--text-secondary)] font-sans flex gap-3 leading-relaxed" style={{ animationDelay: `${(index * 150) + (i * 50)}ms` }}>
                                 <span className="text-[var(--accent)]/60 text-[7px] mt-1.5 flex-shrink-0">●</span>
                                 {detail}
                             </div>
@@ -66,7 +66,7 @@ const Experience: React.FC = () => {
                 <h2 className="text-3xl md:text-5xl font-serif font-bold text-[var(--text-primary)] tracking-tight md:group-hover/header:tracking-[0.02em] transition-all duration-700 leading-none">
                     Experience<span className="text-[var(--accent)]">.</span>
                 </h2>
-                <p className="text-xs md:text-sm font-serif italic text-[var(--text-secondary)]/80 max-w-xl leading-relaxed">
+                <p className="text-xs md:text-sm font-serif italic text-[var(--text-secondary)] max-w-xl leading-relaxed">
                     Experience in building <span className="text-[var(--text-primary)] not-italic font-bold">full-stack and scalable</span> web applications.
                 </p>
             </header>
@@ -98,7 +98,7 @@ const Experience: React.FC = () => {
                         </div>
                     </div>
                     <div className="space-y-2.5">
-                        <h5 className="text-[10px] font-sans font-semibold text-[var(--accent)] uppercase tracking-widest border-b border-[var(--accent)]/10 pb-2">Focus</h5>
+                        <h5 className="text-[10px] font-sans font-semibold text-[var(--accent)] uppercase tracking-widest border-b border-[var(--accent)]/10 pb-2">Areas of Focus</h5>
                         <div className="flex flex-wrap gap-x-3 gap-y-1">
                             {expertise.map((s, i) => <SkillCloudItem key={i} name={s} />)}
                         </div>

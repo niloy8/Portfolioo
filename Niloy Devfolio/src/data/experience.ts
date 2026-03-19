@@ -61,17 +61,16 @@ export const experiences: ExperienceItem[] = [
     }
 ];
 
-export const languages: string[] = ["Python", "Typescript", "Node.js", "Javascript", "C", "SQL", "LaTeX"];
+export const languages: string[] = ["Python", "TypeScript", "Node.js", "JavaScript", "C", "SQL", "LaTeX"];
 
 export const technologies: string[] = [
-    "REST API", "Github", "Supabase", "Next.js", "Vercel", "Firebase",
-    "noSQL", "Telnyx", "OpenAI", "Stripe", "Make", "n8n", "Twilio",
-    "Overleaf", "Cursor", "Claude", "Microsoft Graph API", "MongoDB",
-    "Hugging Face", "Docker", "Canva"
+    "REST API", "Github", "Express.js", "Next.js", "React", "Tailwind CSS", "Vercel", "Firebase",
+    "NoSQL", "PostgreSQL",
+    "Overleaf", "Antigravity", "Claude", "MongoDB",
+    "Docker", "Canva", "DigitalOcean", "Render", "Wordpress", "Woocommerce"
 ];
 
 export const expertise: string[] = [
-    "Machine Learning", "Data Analysis", "Vibe coding", "Prompt Engineering",
-    "Model Context Protocol (MCP)", "Retrieval-Augmented Generation (RAG)",
-    "AI Agent", "Low Code"
+    "Web Development", "AI Development", "Machine Learning", "Data Analysis", "Vibe coding", "Prompt Engineering",
+    "AI Agent", "Low Code", "Cyber Security"
 ];

@@ -2,18 +2,18 @@
 
 :root {
   /* Design System Variables */
-  --bg: #FDFCFB;
-  --text-primary: #2D2926;
-  --text-secondary: #6B6054;
+  --bg: #F7F4F1;
+  --text-primary: #1D1B19;
+  --text-secondary: #4A453F;
   --accent: #8B5E3C;
-  
+
   --font-serif: "Lora", serif;
   --font-sans: "Inter", system-ui, sans-serif;
 
   /* Tailwind 4 automatic variable mapping */
-  --color-brand-bg: #FDFCFB;
-  --color-brand-text-primary: #2D2926;
-  --color-brand-text-secondary: #6B6054;
+  --color-brand-bg: #F7F4F1;
+  --color-brand-text-primary: #1D1B19;
+  --color-brand-text-secondary: #4A453F;
   --color-brand-accent: #8B5E3C;
 }
 
@@ -38,7 +38,12 @@
     margin: 0;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-serif);
     color: var(--text-primary);
   }
@@ -50,13 +55,25 @@
 
 /* Custom animations */
 @keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slide-up {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in {

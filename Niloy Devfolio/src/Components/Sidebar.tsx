@@ -15,7 +15,7 @@ const Sidebar: React.FC = () => {
   ];
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-24 md:w-32 bg-[var(--bg)] border-r border-[var(--text-secondary)]/10 flex flex-col justify-between py-8 md:py-10 px-2 z-50 transition-all duration-300">
+    <aside className="fixed left-0 top-0 h-screen w-24 md:w-32 bg-[var(--bg)] border-r border-[var(--text-secondary)]/20 flex flex-col justify-between py-8 md:py-10 px-2 z-50 transition-all duration-300">
       <div className="flex flex-col items-center w-full">
         {/* Brand Logo */}
         <div className="mb-6 md:mb-6 flex gap-3 self-start ml-2 md:ml-2">
@@ -48,7 +48,7 @@ const Sidebar: React.FC = () => {
                 }`
               }
             >
-              <item.icon size={18} strokeWidth={1.5} />
+              <item.icon size={18} strokeWidth={2} />
               <span className="text-[10px] md:text-xs font-serif tracking-wide">{item.name}</span>
             </NavLink>
           ))}
