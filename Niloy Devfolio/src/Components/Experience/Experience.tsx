@@ -12,7 +12,7 @@ const SkillCloudItem: React.FC<{ name: string }> = ({ name }) => (
 );
 
 const ExperienceSection: React.FC<{ item: ExperienceItem; index: number }> = ({ item, index }) => (
-    <div 
+    <div
         className="group relative flex flex-col md:flex-row gap-4 md:gap-10 py-5 border-b border-[var(--text-secondary)]/15 last:border-0"
         style={{ animationDelay: `${index * 150}ms` }}
     >
@@ -67,7 +67,7 @@ const Experience: React.FC = () => {
                     Experience<span className="text-[var(--accent)]">.</span>
                 </h2>
                 <p className="text-xs md:text-sm font-serif italic text-[var(--text-secondary)]/80 max-w-xl leading-relaxed">
-                    A collection of <span className="text-[var(--text-primary)] not-italic font-bold">architectural craftsmanship</span> and strategic engineering across digital ecosystems.
+                    Experience in building <span className="text-[var(--text-primary)] not-italic font-bold">full-stack and scalable</span> web applications.
                 </p>
             </header>
 
@@ -83,7 +83,7 @@ const Experience: React.FC = () => {
                 <h4 className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-[var(--text-secondary)]/60">
                     Expertise Hub
                 </h4>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 bg-[var(--text-secondary)]/[0.02] backdrop-blur-sm rounded-xl p-6 border border-[var(--text-secondary)]/5">
                     <div className="space-y-2.5">
                         <h5 className="text-[10px] font-sans font-semibold text-[var(--accent)] uppercase tracking-widest border-b border-[var(--accent)]/10 pb-2">Languages</h5>

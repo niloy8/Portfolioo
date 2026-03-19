@@ -47,12 +47,12 @@ export const projects: Project[] = [
     {
         id: "ai-job-coach",
         title: "CareerBoost AI",
-        shortDescription: "An AI powered job coach that helps job seekers review their CV or Resume and prepare for interviews with AI. Built for an AI based Hackathon powered by SmythOS in which we got 9th place among public and private universities from Bangladesh.",
-        description: " A resume analyzer where users can upload their resume and job requirements. The system calculates the ATS score, highlights strengths and weaknesses, and suggests improved resume content to boost interview chances. An interview assistant where, based on job role, requirements, and experience level(intern, junior, mid, senior), the system generates industry- relevant questions.Users can give audio / video interviews, and the AI analyzes: Voice tone, Sentiment, Confidence, Hand movement, Nervousness, Clarity, Correctness. It then provides scores with personalized improvement suggestions. A Mentor Mode that generates follow - up questions to help users practice and improve further.",
+        shortDescription: "An AI powered job coach that helps job seekers review their CV or Resume and prepare for interviews with AI. Built for an AI based Hackathon powered by SmythOS in which we got 9th place among public and private universities from Bangladesh. It was a 3 members team based project",
+        description: " A resume analyzer where users can upload their resume and job requirements. The system calculates the ATS score, highlights strengths and weaknesses, and suggests improved resume content to boost interview chances. An interview assistant where, based on job role, requirements, and experience level(intern, junior, mid, senior), the system generates industry- relevant questions. Users can give audio / video interviews, and the AI analyzes: Voice tone, Sentiment, Confidence, Hand movement, Nervousness, Clarity, Correctness. It then provides scores with personalized improvement suggestions. A Mentor Mode that generates follow - up questions to help users practice and improve further.",
         year: "2025",
         status: "Live",
-        tags: ["AI", "React", "Patient Care", "NLP"],
-        github: "https://github.com/niloy8/AI-JOB-COACH",
-        demo: "#"
+        tags: ["AI", "React", "VITE", "Firebase", "Tailwind CSS", "JavaScript", "MongoDB", "SmythOS API", "Python", "Docker", "Vercel"],
+        github: "https://github.com/naimulhasannabil/AI-JOB-COACH",
+        demo: "https://ai-job-coach-red.vercel.app/"
     }
 ];
