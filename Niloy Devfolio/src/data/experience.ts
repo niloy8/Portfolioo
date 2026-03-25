@@ -21,11 +21,12 @@ export const experiences: ExperienceItem[] = [
         description: "Working on building modern, scalable web applications with a focus on performance, clean architecture, and real-world usability.",
         details: [
             "Maintained and worked with WordPress website.",
-            "Developed and maintained a full-stack e-commerce platform (Khan Express) platform with integrated frontend and backend systems.",
+
             "Built responsive user interfaces using React/Next.js and handled backend logic with Express js",
             "Implemented authentication, API integration, and efficient data handling.",
             "Worked on AI Agent and Low Code projects in another e-commerce platform.",
             "Worked on Firebase, Docker, Digital Ocean, Vercel, Render to deploy and other needed tools to make the site live.",
+            "Developed and maintained a full-stack e-commerce platform (Khan Express) platform with integrated frontend and backend systems.",
         ]
     },
     {
