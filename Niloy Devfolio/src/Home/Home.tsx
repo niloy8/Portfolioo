@@ -45,7 +45,7 @@ const Home: React.FC = () => {
             <div className="relative shrink-0">
                 <div className="absolute inset-0 translate-x-3 translate-y-3 rounded-2xl border border-[var(--text-secondary)]/20"></div>
                 <div className="w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 relative rounded-2xl overflow-hidden bg-[#e5e0d8] border border-[var(--bg)] z-10 flex items-center justify-center text-[var(--text-secondary)]">
-                    <img src={niloyImage} alt="Niloy Bhuiyan" className="w-full h-full object-cover object-top" />
+                    <img src={niloyImage} alt="Niloy Bhuiyan" className="w-full h-full object-cover object-top brightness-80" />
                 </div>
             </div>
         </section>
