@@ -18,7 +18,7 @@ export const projects: Project[] = [
         description: "Khan Express is a modern full-stack e-commerce platform built with Next.js, Node.js and for database used PostgreSQL, offering a fast and seamless shopping experience. It is built for this company named Khan Express. It features a responsive frontend with a powerful backend to manage products, users, and secure system. Built with scalability and performance in mind, Khan Express aims to provide a reliable digital marketplace for both customers and sellers. Also it includes admin panel for managing products, users, orders, leads, customers and other business related features.",
         year: "2026",
         status: "Live",
-        tags: ["E-commerce", "Admin Panel", "Next.js", "Node.js", "Express", "TypeScript", "Tailwind CSS", "Firebase", "JWT", "Docker", "DigitalOcean", "PostgreSQL", "React", "Vercel", "Render"],
+        tags: ["E-commerce", "Admin Panel", "Next.js", "Node.js", "Express.js", "TypeScript", "Tailwind CSS", "Firebase", "JWT", "Docker", "DigitalOcean", "PostgreSQL", "React", "Vercel", "Render"],
         github: "#",
         demo: "https://knex.com.bd/"
     },

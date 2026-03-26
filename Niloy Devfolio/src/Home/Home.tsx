@@ -35,7 +35,7 @@ const Home: React.FC = () => {
                     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=niloybhuiyan522@gmail.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-[var(--text-primary)] transition-colors group">
                         <Mail size={12} className="group-hover:-translate-y-0.5 transition-transform" /> <span>Email</span>
                     </a>
-                    <a href="#" className="flex items-center gap-1.5 hover:text-[var(--text-primary)] transition-colors group">
+                    <a href="/My_CV.pdf" download="My_CV.pdf" className="flex items-center gap-1.5 hover:text-[var(--text-primary)] transition-colors group">
                         <FaFile size={12} className="group-hover:-translate-y-0.5 transition-transform" /> <span>Resume</span>
                     </a>
                 </div>
