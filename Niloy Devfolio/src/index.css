@@ -2,7 +2,7 @@
 
 :root {
   /* Design System Variables */
-  --bg: #F7F4F1;
+  --bg: #EAE3D9;
   --text-primary: #1D1B19;
   --text-secondary: #4A453F;
   --accent: #8B5E3C;
@@ -11,7 +11,7 @@
   --font-sans: "Inter", system-ui, sans-serif;
 
   /* Tailwind 4 automatic variable mapping */
-  --color-brand-bg: #F7F4F1;
+  --color-brand-bg: #EAE3D9;
   --color-brand-text-primary: #1D1B19;
   --color-brand-text-secondary: #4A453F;
   --color-brand-accent: #8B5E3C;
