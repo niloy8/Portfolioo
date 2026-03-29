@@ -34,13 +34,13 @@ const Sidebar: React.FC = () => {
             </header>
 
             {/* --- MOBILE BOTTOM NAVIGATION (Floating Island) --- */}
-            <nav className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[92%] max-w-md h-20 bg-[var(--bg)]/90 backdrop-blur-2xl border border-[var(--text-secondary)]/10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] z-[60] px-4 flex items-center justify-around overflow-hidden">
+            <nav className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[92%] max-w-md h-20 bg-[var(--bg)]/90 backdrop-blur-2xl border border-[var(--text-secondary)]/10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] z-[60] px-2 grid grid-cols-5 items-center overflow-hidden">
                 {navItems.map((item) => (
                     <NavLink
                         key={item.name}
                         to={item.path}
                         className={({ isActive }) =>
-                            `flex flex-col items-center justify-center gap-1.5 transition-all duration-500 relative group py-2
+                            `flex flex-col items-center justify-center transition-all duration-500 relative group h-full
                             ${isActive ? 'text-[var(--accent)]' : 'text-[var(--text-secondary)]/60 hover:text-[var(--text-primary)]'}`
                         }
                     >
@@ -52,11 +52,13 @@ const Sidebar: React.FC = () => {
                                         <span className="absolute inset-0 bg-[var(--accent)]/20 rounded-2xl blur-md -z-0 animate-pulse"></span>
                                     )}
                                 </div>
-                                <span className={`text-[10px] font-sans font-bold uppercase tracking-wider transition-all duration-500 ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
-                                    {item.name}
-                                </span>
+                                <div className="h-4 flex items-center justify-center overflow-visible">
+                                    <span className={`text-[9px] font-sans font-bold uppercase tracking-wider transition-all duration-500 whitespace-nowrap ${isActive ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-2 scale-90'}`}>
+                                        {item.name}
+                                    </span>
+                                </div>
                                 {isActive && (
-                                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[var(--accent)] rounded-full shadow-[0_0_10px_var(--accent)] animate-bounce" />
+                                    <div className="absolute top-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[var(--accent)] rounded-full shadow-[0_0_10px_var(--accent)] animate-bounce" />
                                 )}
                             </>
                         )}
